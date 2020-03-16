@@ -17,6 +17,12 @@
 		5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F3052418BE0100BE4985 /* roundViewScroll.swift */; };
 		5840F3082418E04900BE4985 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F3072418E04900BE4985 /* tableViewController.swift */; };
 		5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F30B2418F33D00BE4985 /* customTableViewCell.swift */; };
+		F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E8697241CF29E0029FA17 /* mvcCollectionViewCell.swift */; };
+		F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E8699241CF2EA0029FA17 /* mvcViewController.swift */; };
+		F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869B241CF4230029FA17 /* mvcModel.swift */; };
+		F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869D241CF4D50029FA17 /* mvcData.swift */; };
+		F68E86A0241F5F4A0029FA17 /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869F241F5F4A0029FA17 /* collectionViewController.swift */; };
+		F68E86A2241F62220029FA17 /* newCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		5840F3052418BE0100BE4985 /* roundViewScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundViewScroll.swift; sourceTree = "<group>"; };
 		5840F3072418E04900BE4985 /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		5840F30B2418F33D00BE4985 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
+		F68E8697241CF29E0029FA17 /* mvcCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcCollectionViewCell.swift; sourceTree = "<group>"; };
+		F68E8699241CF2EA0029FA17 /* mvcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcViewController.swift; sourceTree = "<group>"; };
+		F68E869B241CF4230029FA17 /* mvcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcModel.swift; sourceTree = "<group>"; };
+		F68E869D241CF4D50029FA17 /* mvcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcData.swift; sourceTree = "<group>"; };
+		F68E869F241F5F4A0029FA17 /* collectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
+		F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +76,65 @@
 		581269592412152A002A7C20 /* Begin */ = {
 			isa = PBXGroup;
 			children = (
+				F68E8693241CF0810029FA17 /* Data */,
+				F68E8690241CEFEB0029FA17 /* Model */,
+				F68E868F241CEFE10029FA17 /* Controller */,
+				F68E8694241CF0C20029FA17 /* View */,
+				F68E868E241CEFC80029FA17 /* Storyboard */,
 				5812695A2412152A002A7C20 /* AppDelegate.swift */,
 				5812695C2412152A002A7C20 /* SceneDelegate.swift */,
 				5812695E2412152A002A7C20 /* ViewController.swift */,
 				5812697624128D98002A7C20 /* DataViewController.swift */,
-				581269602412152A002A7C20 /* Main.storyboard */,
 				5840F30B2418F33D00BE4985 /* customTableViewCell.swift */,
 				5840F3072418E04900BE4985 /* tableViewController.swift */,
 				5840F3052418BE0100BE4985 /* roundViewScroll.swift */,
 				5812696324121534002A7C20 /* Assets.xcassets */,
-				5812696524121534002A7C20 /* LaunchScreen.storyboard */,
 				5812696824121534002A7C20 /* Info.plist */,
 			);
 			path = Begin;
+			sourceTree = "<group>";
+		};
+		F68E868E241CEFC80029FA17 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				581269602412152A002A7C20 /* Main.storyboard */,
+				F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */,
+				5812696524121534002A7C20 /* LaunchScreen.storyboard */,
+				F68E869F241F5F4A0029FA17 /* collectionViewController.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		F68E868F241CEFE10029FA17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F68E8699241CF2EA0029FA17 /* mvcViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F68E8690241CEFEB0029FA17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F68E869B241CF4230029FA17 /* mvcModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F68E8693241CF0810029FA17 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F68E869D241CF4D50029FA17 /* mvcData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F68E8694241CF0C20029FA17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F68E8697241CF29E0029FA17 /* mvcCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,10 +211,16 @@
 				5812695F2412152A002A7C20 /* ViewController.swift in Sources */,
 				5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */,
 				5812695B2412152A002A7C20 /* AppDelegate.swift in Sources */,
+				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
 				5840F3082418E04900BE4985 /* tableViewController.swift in Sources */,
+				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,
+				F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */,
+				F68E86A0241F5F4A0029FA17 /* collectionViewController.swift in Sources */,
 				5812697724128D98002A7C20 /* DataViewController.swift in Sources */,
 				5812695D2412152A002A7C20 /* SceneDelegate.swift in Sources */,
+				F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */,
+				F68E86A2241F62220029FA17 /* newCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
