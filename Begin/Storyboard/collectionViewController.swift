@@ -8,7 +8,7 @@
 
 import UIKit
 
-class collectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+class collectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     var data = ["🦙","🦛","🦘","🦧","🦢","🦜","🦞","🦡","🦥","🦦","🦨","🦩","🦮","🐕‍🦺","🐘"]
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,6 +31,15 @@ class collectionViewController: UIViewController,UICollectionViewDataSource,UICo
         cell.animalLabel.text = self.data[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let trywidth = collectionView.bounds.size.width/4
+        let tryheigth = collectionView.bounds.size.height/10
+
+        return CGSize(width: trywidth, height: tryheigth)
+    }
+  
+   
     
 
    

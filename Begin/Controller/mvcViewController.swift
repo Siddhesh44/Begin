@@ -9,7 +9,7 @@
 import UIKit
 
 
-class mvcViewController: UIViewController {
+class mvcViewController: UIViewController,UICollectionViewDelegateFlowLayout {
 
     var arrData = [mvcModel]()
     override func viewDidLoad() {
@@ -39,4 +39,13 @@ extension mvcViewController: UICollectionViewDelegate,UICollectionViewDataSource
         return cell
         
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let trywidth = collectionView.bounds.width/3.5
+//        let tryheigth = collectionView.bounds.height/3
+//
+//
+//        return CGSize(width: trywidth, height: tryheigth)
+//    }
+    
 }

@@ -15,9 +15,9 @@ class mvcData
     {
         var arrData = [mvcModel]()
         arrData = [
-            mvcModel(img: (UIImage(named: "img1") ?? nil)!, titleStr: "Image 1"),
-            mvcModel(img: (UIImage(named: "img2") ?? nil)!, titleStr: "Image 2"),
-            mvcModel(img: (UIImage(named: "img3") ?? nil)!, titleStr: "Image 3")
+            mvcModel(img: #imageLiteral(resourceName: "img2"), titleStr: "Image 1"),
+            mvcModel(img: #imageLiteral(resourceName: "img1"), titleStr: "Image 2"),
+            mvcModel(img: #imageLiteral(resourceName: "img3"), titleStr: "Image 3")
         ]
         return arrData
     }
