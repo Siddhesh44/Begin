@@ -23,6 +23,8 @@
 		F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869D241CF4D50029FA17 /* mvcData.swift */; };
 		F68E86A0241F5F4A0029FA17 /* collectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869F241F5F4A0029FA17 /* collectionViewController.swift */; };
 		F68E86A2241F62220029FA17 /* newCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */; };
+		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
+		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		F68E869D241CF4D50029FA17 /* mvcData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcData.swift; sourceTree = "<group>"; };
 		F68E869F241F5F4A0029FA17 /* collectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewController.swift; sourceTree = "<group>"; };
 		F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
+		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				F68E8699241CF2EA0029FA17 /* mvcViewController.swift */,
+				F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */,
+				F6B36F252420EDA400AEE85C /* toDoListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -208,10 +214,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */,
 				5812695F2412152A002A7C20 /* ViewController.swift in Sources */,
 				5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */,
 				5812695B2412152A002A7C20 /* AppDelegate.swift in Sources */,
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
+				F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
 				5840F3082418E04900BE4985 /* tableViewController.swift in Sources */,
 				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,
