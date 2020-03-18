@@ -15,6 +15,7 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
     var taskDesc:  String?
     var taskDate:  String?
     
+    
     @IBOutlet weak var tTitle: UITextField!
    
     @IBOutlet weak var tDesc: UITextField!
@@ -51,10 +52,19 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
             taskTitle = tTitle.text
             taskDesc = tDesc.text
             taskDate = tDate.text
+        
+       
     }
     
- 
-    
+
+    func addTask() -> [TaskModel]
+    {
+        var taskData = [TaskModel]()
+        
+        taskData = [TaskModel(title: taskTitle!, desc: taskDesc!, date: taskDate!)]
+        return taskData
+    }
+
     
     
     // hide keyboard
@@ -78,3 +88,5 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
 
      
 }
+
+

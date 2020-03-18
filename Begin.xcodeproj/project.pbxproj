@@ -26,6 +26,7 @@
 		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
 		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 		F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */; };
+		F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B183242247360007CAC6 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
 		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewTaskTableViewCell.swift; sourceTree = "<group>"; };
+		F6E3B183242247360007CAC6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				581269602412152A002A7C20 /* Main.storyboard */,
 				F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */,
 				F6B36F252420EDA400AEE85C /* toDoListViewController.swift */,
+				F6E3B183242247360007CAC6 /* TaskModel.swift */,
 				F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */,
 				F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */,
 				5812696524121534002A7C20 /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
+				F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */,
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
 				5840F3082418E04900BE4985 /* tableViewController.swift in Sources */,
 				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,

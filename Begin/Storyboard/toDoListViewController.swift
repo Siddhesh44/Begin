@@ -10,15 +10,17 @@ import UIKit
 
 class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var tasks = [String]()
 
+    var tasks = [TaskModel]()
     @IBOutlet weak var tableView: UITableView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
-              tableView.delegate = self
+        tableView.delegate = self
+        
+        tasks = addTaskViewController.addTask()
     }
     
     // go to Add New Task
@@ -28,20 +30,18 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
 
+   
     // Table view Delegates
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+       
        let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as! viewTaskTableViewCell
-        
-        cell.vtTitleLabel.text = tasks[indexPath.row]
-        cell.vtDescLabel.text = tasks[indexPath.row]
-     
-
+       
+        cell.tasksData = tasks[indexPath.row]
         return cell
     }
     

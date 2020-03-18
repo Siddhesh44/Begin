@@ -13,15 +13,13 @@ class viewTaskTableViewCell: UITableViewCell {
     @IBOutlet weak var vtTitleLabel: UILabel!
     
     @IBOutlet weak var vtDescLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+ 
+    var tasksData: TaskModel?
+    {
+        didSet{
+            vtTitleLabel.text = tasksData?.title
+            vtDescLabel.text = tasksData?.desc
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
