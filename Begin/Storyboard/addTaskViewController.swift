@@ -11,9 +11,9 @@ import UIKit
 class addTaskViewController: UIViewController,UITextFieldDelegate {
 
     
-    var taskTitle: String?
-    var taskDesc:  String?
-    var taskDate:  String?
+    var taskTitle: String!
+    var taskDesc:  String!
+    var taskDate:  String!
     
     
     @IBOutlet weak var tTitle: UITextField!
@@ -46,27 +46,7 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func addTaskButton(_ sender: UIBarButtonItem) {
-        
-            taskTitle = tTitle.text
-            taskDesc = tDesc.text
-            taskDate = tDate.text
-        
-       
-    }
-    
 
-    func addTask() -> [TaskModel]
-    {
-        var taskData = [TaskModel]()
-        
-        taskData = [TaskModel(title: taskTitle!, desc: taskDesc!, date: taskDate!)]
-        return taskData
-    }
-
-    
-    
     // hide keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -85,7 +65,17 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
         }
     }
              
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let newTitle = tTitle.text,let newDesc = tDesc.text,let newDate = tDate.text{
+            
+            taskTitle = newTitle
+            taskDesc = newDesc
+            taskDate = newDate
+              
+        }
+      
+    }
      
 }
 

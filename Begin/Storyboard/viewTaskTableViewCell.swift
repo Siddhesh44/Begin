@@ -14,12 +14,13 @@ class viewTaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var vtDescLabel: UILabel!
  
-    var tasksData: TaskModel?
-    {
-        didSet{
-            vtTitleLabel.text = tasksData?.title
-            vtDescLabel.text = tasksData?.desc
-        }
-    }
+    @IBOutlet weak var vtDateLabel: UILabel!
     
+    func tasksData(tasks:TaskModel)
+    {
+        vtTitleLabel.text = tasks.title
+        vtDescLabel.text = tasks.desc
+        vtDateLabel.text = tasks.date
+    }
+   
 }

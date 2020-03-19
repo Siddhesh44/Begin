@@ -625,11 +625,11 @@
                                 <rect key="frame" x="0.0" y="102" width="414" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reuse" rowHeight="87" id="hXP-by-QdN" customClass="viewTaskTableViewCell" customModule="Begin" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reuse" id="hXP-by-QdN" customClass="viewTaskTableViewCell" customModule="Begin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="83.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXP-by-QdN" id="Xm8-TS-U9u">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="83.333335876464844"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJw-gN-QJ0">
@@ -639,20 +639,32 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbz-5X-acK">
-                                                    <rect key="frame" x="50.000000000000007" y="48" width="99.666666666666686" height="24"/>
+                                                    <rect key="frame" x="50" y="48.333333333333336" width="354" height="24.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxw-7Y-RAi">
+                                                    <rect key="frame" x="352" y="8" width="42" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Fbz-5X-acK" firstAttribute="leading" secondItem="Xm8-TS-U9u" secondAttribute="leading" constant="50" id="dB6-86-FBB"/>
-                                                <constraint firstItem="YJw-gN-QJ0" firstAttribute="leading" secondItem="Xm8-TS-U9u" secondAttribute="leading" constant="40" id="ecq-BM-fia"/>
-                                                <constraint firstItem="Fbz-5X-acK" firstAttribute="top" secondItem="YJw-gN-QJ0" secondAttribute="bottom" constant="10" id="fbt-8J-wqU"/>
-                                                <constraint firstItem="YJw-gN-QJ0" firstAttribute="top" secondItem="Xm8-TS-U9u" secondAttribute="top" constant="8" id="gOU-z4-3gv"/>
+                                                <constraint firstItem="YJw-gN-QJ0" firstAttribute="leading" secondItem="Xm8-TS-U9u" secondAttribute="leading" constant="40" id="4iT-Sw-KzU"/>
+                                                <constraint firstItem="Fbz-5X-acK" firstAttribute="top" secondItem="Xm8-TS-U9u" secondAttribute="top" constant="48.329999999999998" id="ELc-To-fd5"/>
+                                                <constraint firstItem="Fbz-5X-acK" firstAttribute="leading" secondItem="Xm8-TS-U9u" secondAttribute="leading" constant="50" id="Hds-oL-cZ8"/>
+                                                <constraint firstAttribute="trailing" secondItem="xxw-7Y-RAi" secondAttribute="trailing" constant="20" id="LPc-Q4-lSL"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fbz-5X-acK" secondAttribute="bottom" constant="10.67" id="MPT-yo-OEk"/>
+                                                <constraint firstItem="Fbz-5X-acK" firstAttribute="top" secondItem="YJw-gN-QJ0" secondAttribute="bottom" constant="10.33" id="Qm8-C6-HkY"/>
+                                                <constraint firstItem="xxw-7Y-RAi" firstAttribute="top" secondItem="Xm8-TS-U9u" secondAttribute="top" constant="8" id="VW0-tT-oWc"/>
+                                                <constraint firstItem="YJw-gN-QJ0" firstAttribute="top" secondItem="Xm8-TS-U9u" secondAttribute="top" constant="8" id="ie8-RR-Vet"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fbz-5X-acK" secondAttribute="trailing" constant="10" id="mPQ-9v-K3c"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="vtDateLabel" destination="xxw-7Y-RAi" id="kfj-cX-wDc"/>
                                             <outlet property="vtDescLabel" destination="Fbz-5X-acK" id="DUV-qM-RcR"/>
                                             <outlet property="vtTitleLabel" destination="YJw-gN-QJ0" id="zb1-nT-ZRm"/>
                                         </connections>
@@ -692,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKO-ZF-3Yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-98059" y="-506"/>
+            <point key="canvasLocation" x="-98059.420289855087" y="-506.25"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="Ugk-6Z-ddf">
@@ -721,7 +733,7 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="O9O-zp-Wyl" firstAttribute="leading" secondItem="Trd-Vo-Yh5" secondAttribute="trailing" constant="20" id="XMK-7C-SIP"/>
+                                            <constraint firstItem="O9O-zp-Wyl" firstAttribute="leading" secondItem="t7F-WO-RxR" secondAttribute="leading" constant="161" id="cDC-CS-pTC"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5q-sS-fFm">
@@ -751,7 +763,7 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Bhe-A4-JvU" firstAttribute="leading" secondItem="1Q6-mq-A8t" secondAttribute="trailing" constant="20" id="0M7-j5-Ouc"/>
+                                            <constraint firstItem="Bhe-A4-JvU" firstAttribute="leading" secondItem="BRc-wn-XHJ" secondAttribute="leading" constant="168" id="7kF-Eb-NsU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -773,7 +785,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Add" id="5ja-iB-Ima">
                                             <connections>
-                                                <action selector="addTaskButton:" destination="AJA-19-owd" id="7F4-Wa-Y3z"/>
+                                                <segue destination="g57-en-7MD" kind="unwind" unwindAction="unwindFromAddTask:" id="MCQ-ZO-UNn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -792,13 +804,14 @@
                         <viewLayoutGuide key="safeArea" id="5mp-Xc-xWp"/>
                     </view>
                     <connections>
-                        <outlet property="addTaskButton" destination="5ja-iB-Ima" id="Bj8-VA-F2x"/>
+                        <outlet property="addTaskButton" destination="5ja-iB-Ima" id="SNl-hS-NI4"/>
                         <outlet property="tDate" destination="Bhe-A4-JvU" id="iOy-Qq-tA8"/>
                         <outlet property="tDesc" destination="nPN-2a-psx" id="e0C-dt-EaB"/>
                         <outlet property="tTitle" destination="O9O-zp-Wyl" id="kVG-Jt-41a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vx9-2A-tV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="g57-en-7MD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-97170" y="-506"/>
         </scene>

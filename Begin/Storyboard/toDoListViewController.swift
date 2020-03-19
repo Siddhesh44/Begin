@@ -11,7 +11,7 @@ import UIKit
 class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
 
-    var tasks = [TaskModel]()
+    var tasks: [TaskModel] = []
     @IBOutlet weak var tableView: UITableView!
   
     override func viewDidLoad() {
@@ -20,7 +20,19 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.dataSource = self
         tableView.delegate = self
         
-        tasks = addTaskViewController.addTask()
+        
+    }
+    
+    @IBAction func unwindFromAddTask(_ sender:UIStoryboardSegue){
+        if sender.source is addTaskViewController{
+            if let senderVC = sender.source as? addTaskViewController
+            {
+              
+                let task = TaskModel(title: senderVC.taskTitle, desc: senderVC.taskDesc, date: senderVC.taskDate)
+               tasks.append(task)
+            }
+            tableView.reloadData()
+        }
     }
     
     // go to Add New Task
@@ -41,7 +53,8 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
        
        let cell = tableView.dequeueReusableCell(withIdentifier: "Reuse", for: indexPath) as! viewTaskTableViewCell
        
-        cell.tasksData = tasks[indexPath.row]
+        let Task = tasks[indexPath.row]
+        cell.tasksData(tasks: Task)
         return cell
     }
     
