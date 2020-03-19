@@ -27,6 +27,9 @@
 		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 		F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */; };
 		F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B183242247360007CAC6 /* TaskModel.swift */; };
+		F6E3B1862423810D0007CAC6 /* doneTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B1852423810D0007CAC6 /* doneTaskTableViewCell.swift */; };
+		F6E3B18A2423851F0007CAC6 /* doneTaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B1892423851F0007CAC6 /* doneTaskTableViewController.swift */; };
+		F6E3B18E242394870007CAC6 /* donetask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B18D242394870007CAC6 /* donetask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		F6E3B183242247360007CAC6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		F6E3B1852423810D0007CAC6 /* doneTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doneTaskTableViewCell.swift; sourceTree = "<group>"; };
+		F6E3B1892423851F0007CAC6 /* doneTaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doneTaskTableViewController.swift; sourceTree = "<group>"; };
+		F6E3B18D242394870007CAC6 /* donetask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donetask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +112,11 @@
 			isa = PBXGroup;
 			children = (
 				581269602412152A002A7C20 /* Main.storyboard */,
+				F6E3B1892423851F0007CAC6 /* doneTaskTableViewController.swift */,
+				F6E3B1852423810D0007CAC6 /* doneTaskTableViewCell.swift */,
 				F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */,
 				F6B36F252420EDA400AEE85C /* toDoListViewController.swift */,
+				F6E3B18D242394870007CAC6 /* donetask.swift */,
 				F6E3B183242247360007CAC6 /* TaskModel.swift */,
 				F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */,
 				F68E86A1241F62220029FA17 /* newCollectionViewCell.swift */,
@@ -226,6 +235,7 @@
 				5812695B2412152A002A7C20 /* AppDelegate.swift in Sources */,
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */,
+				F6E3B1862423810D0007CAC6 /* doneTaskTableViewCell.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
 				F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */,
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
@@ -233,9 +243,11 @@
 				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,
 				F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */,
 				F68E86A0241F5F4A0029FA17 /* collectionViewController.swift in Sources */,
+				F6E3B18E242394870007CAC6 /* donetask.swift in Sources */,
 				5812697724128D98002A7C20 /* DataViewController.swift in Sources */,
 				5812695D2412152A002A7C20 /* SceneDelegate.swift in Sources */,
 				F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */,
+				F6E3B18A2423851F0007CAC6 /* doneTaskTableViewController.swift in Sources */,
 				F68E86A2241F62220029FA17 /* newCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

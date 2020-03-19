@@ -60,6 +60,35 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
+    // table row Swipe Action
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let Done = UIContextualAction(style: .destructive, title: "Done") {
+            (action,view,nil) in
+            print("Complete")
+           
+            doneTask.append(self.tasks[indexPath.row])
+            
+            taskManger.getTask()
+            
+            
+            let a = self.tasks[indexPath.row].title
+            print(a)
+
+            self.tasks.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        Done.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        Done.title = "Done"
+        Done.image = #imageLiteral(resourceName: "icons8-checkmark-16")
+       
+        let config = UISwipeActionsConfiguration(actions: [Done])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+    }
     
+   
+    
+
 }
