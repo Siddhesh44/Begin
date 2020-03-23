@@ -9,7 +9,7 @@
 import UIKit
 
 class collectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-
+    
     var data = ["🦙","🦛","🦘","🦧","🦢","🦜","🦞","🦡","🦥","🦦","🦨","🦩","🦮","🐕‍🦺","🐘"]
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -17,7 +17,7 @@ class collectionViewController: UIViewController,UICollectionViewDataSource,UICo
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -26,8 +26,8 @@ class collectionViewController: UIViewController,UICollectionViewDataSource,UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-       let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as! newCollectionViewCell
-       
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "Reuse", for: indexPath) as! newCollectionViewCell
+        
         cell.animalLabel.text = self.data[indexPath.row]
         return cell
     }
@@ -35,13 +35,13 @@ class collectionViewController: UIViewController,UICollectionViewDataSource,UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let trywidth = collectionView.bounds.size.width/4
         let tryheigth = collectionView.bounds.size.height/10
-
+        
         return CGSize(width: trywidth, height: tryheigth)
     }
-  
-   
     
-
-   
-
+    
+    
+    
+    
+    
 }

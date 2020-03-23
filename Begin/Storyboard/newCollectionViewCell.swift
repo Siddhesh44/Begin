@@ -12,7 +12,7 @@ class newCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var animalLabel: UILabel!
     
-//    func showAnimals(animal: String)  {
-//        animalLabel.text = animal
-//    }
+    //    func showAnimals(animal: String)  {
+    //        animalLabel.text = animal
+    //    }
 }

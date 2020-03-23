@@ -9,16 +9,16 @@
 import UIKit
 
 class doneTaskTableViewCell: UITableViewCell {
-
-   
-    @IBOutlet weak var cTitle: UILabel!
-    @IBOutlet weak var cDesc: UILabel!
-    @IBOutlet weak var cDate: UILabel!
+    
+    
+    @IBOutlet weak var completedTitle: UILabel!
+    @IBOutlet weak var completedDesc: UILabel!
+    @IBOutlet weak var completedDate: UILabel!
     
     func tasksData(tasks:TaskModel)
-       {
-           cTitle.text = tasks.title
-           cDesc.text = tasks.desc
-           cDate.text = tasks.date
-       }
+    {
+        completedTitle.text = tasks.title
+        completedDesc.text = tasks.desc
+        completedDate.text = tasks.date
+    }
 }

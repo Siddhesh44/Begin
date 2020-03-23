@@ -664,9 +664,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="vtDateLabel" destination="xxw-7Y-RAi" id="kfj-cX-wDc"/>
-                                            <outlet property="vtDescLabel" destination="Fbz-5X-acK" id="DUV-qM-RcR"/>
-                                            <outlet property="vtTitleLabel" destination="YJw-gN-QJ0" id="zb1-nT-ZRm"/>
+                                            <outlet property="showDate" destination="xxw-7Y-RAi" id="yzt-5D-YSk"/>
+                                            <outlet property="showDesc" destination="Fbz-5X-acK" id="HRL-65-gmL"/>
+                                            <outlet property="showTitle" destination="YJw-gN-QJ0" id="bZ8-PX-iUY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -756,7 +756,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-A4-JvU">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-A4-JvU">
                                                 <rect key="frame" x="168" y="0.0" width="166" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -814,6 +814,22 @@
                 <exit id="g57-en-7MD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-97170" y="-506"/>
+        </scene>
+        <!--Core Data View Controller-->
+        <scene sceneID="XqQ-Tb-tsD">
+            <objects>
+                <viewController id="E9a-xx-RYf" customClass="coreDataViewController" customModule="Begin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EPg-4l-yF3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3GA-X5-XDH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TR2-LK-lf2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tim-Vr-epu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95055.072463768127" y="-443.30357142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9ru-vA-FrM">
@@ -883,9 +899,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cDate" destination="GTK-SR-bAF" id="DCe-NW-nhd"/>
-                                            <outlet property="cDesc" destination="xqy-87-dqg" id="GcU-Sb-VSq"/>
-                                            <outlet property="cTitle" destination="ggG-bw-4BG" id="fn6-LJ-Gkr"/>
+                                            <outlet property="completedDate" destination="GTK-SR-bAF" id="dVM-65-lPU"/>
+                                            <outlet property="completedDesc" destination="xqy-87-dqg" id="zws-yn-n5f"/>
+                                            <outlet property="completedTitle" destination="ggG-bw-4BG" id="X9A-Va-Xb5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,16 +8,18 @@
 
 import Foundation
 import UIKit
-var doneTask: [TaskModel] = []
+import  CoreData
+
+// conatains completed task
+var completedTask: [TaskModel] = []
 
 class taskManger
 {
-
-static func getTask()
-{
-   taskDone = doneTask
-}
-    
+    static func getTask()
+    {
+// assign completedTask array to taskDone array present in donTaskTableViewController
+       // taskDone = completedTask
+    }
 }
 
 

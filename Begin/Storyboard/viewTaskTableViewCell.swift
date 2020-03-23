@@ -9,18 +9,18 @@
 import UIKit
 
 class viewTaskTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var vtTitleLabel: UILabel!
     
-    @IBOutlet weak var vtDescLabel: UILabel!
- 
-    @IBOutlet weak var vtDateLabel: UILabel!
+    @IBOutlet weak var showTitle: UILabel!
     
-    func tasksData(tasks:TaskModel)
+    @IBOutlet weak var showDesc: UILabel!
+    
+    @IBOutlet weak var showDate: UILabel!
+    
+    func showTasks(tasks:TaskModel)
     {
-        vtTitleLabel.text = tasks.title
-        vtDescLabel.text = tasks.desc
-        vtDateLabel.text = tasks.date
+        showTitle.text = tasks.title
+        showDesc.text = tasks.desc
+        showDate.text = tasks.date
     }
-   
+    
 }
