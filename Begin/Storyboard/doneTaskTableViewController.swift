@@ -34,6 +34,8 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
         } catch {
             print ("There was an error")
         }
+        completedTask = []
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
