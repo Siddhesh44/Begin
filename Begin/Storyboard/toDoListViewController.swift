@@ -14,8 +14,13 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 // create a context from container.
 let context = appDelegate.persistentContainer.viewContext
 // create an entity and new records.
-let entity = NSEntityDescription.entity(forEntityName: "Tasks1", in: context)
+let entity = NSEntityDescription.entity(forEntityName: "Tasks", in: context)
 let TasksData = NSManagedObject(entity: entity!, insertInto: context)
+
+
+
+let entity1 = NSEntityDescription.entity(forEntityName: "DoneTasks", in: context)
+let CompletedTasksData = NSManagedObject(entity: entity1!, insertInto: context)
 
 
 class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -31,8 +36,7 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
         tableView.delegate = self
         
         // fetch tasks from dataModel
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks1")
-        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
@@ -44,10 +48,9 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
                     let savedDate = data.value(forKey: "date") as? String{
                     
                     tasks.append(TaskModel(title: savedTitle, desc: savedDesc , date: savedDate))
-                    
-                    print("Fetching Tasks completed")
                 }
             }
+            print("Fetching Tasks completed")
         } catch {
             print("Failed to Fetch Tasks")
         }
@@ -107,44 +110,22 @@ class toDoListViewController: UIViewController,UITableViewDelegate,UITableViewDa
             
             // add completed task to completedTask array present in donetask.swift
             completedTask.append(self.tasks[indexPath.row])
+            print("append done task to completedTask array")
             
-            // calls method from donetask.swift
-            
-           // taskManger.getTask()
-            
+            print(self.tasks[indexPath.row].title)
             // add  task to  created record for each keys
-            TasksData.setValue(self.tasks[indexPath.row].title, forKey: "doneTitle")
-            TasksData.setValue(self.tasks[indexPath.row].desc, forKey: "doneDesc")
-            TasksData.setValue(self.tasks[indexPath.row].date, forKey: "doneDate")
+            CompletedTasksData.setValue(self.tasks[indexPath.row].title, forKey: "doneTitle")
+            CompletedTasksData.setValue(self.tasks[indexPath.row].desc, forKey: "doneDesc")
+            CompletedTasksData.setValue(self.tasks[indexPath.row].date, forKey: "doneDate")
             
             do {
                 try context.save()
-                print("Saved")
+                print("Saved in dataModel")
             } catch {
                 print("Failed saving")
             }
-            // remove competed task from tasks array
+            // remove completed task from tasks array
             self.tasks.remove(at: indexPath.row)
-            
-            // remove completed task from dataModel
-            //                        let request1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks1")
-            //                        request1.returnsObjectsAsFaults = false
-            //                        do{
-            //                            let test = try context.fetch(request1)
-            //                            let objectToDelete = test[indexPath.row] as! NSManagedObject
-            //                            context.delete(objectToDelete)
-            //
-            //                            do{
-            //                                try context.save()
-            //                            }
-            //                            catch
-            //                            {
-            //                                print(error)
-            //                            }
-            //                        }
-            //                        catch{
-            //                            print(error)
-            //                        }
             
             tableView.reloadData()
         }

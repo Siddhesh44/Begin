@@ -907,19 +907,30 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5R-u4-U6W">
-                                <rect key="frame" x="0.0" y="69" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="69" width="244" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m78-AC-msQ">
+                                <rect key="frame" x="324" y="69" width="70" height="36"/>
+                                <state key="normal" title="Clear All"/>
+                                <connections>
+                                    <action selector="clearCompletedTasksButton:" destination="src-02-68z" eventType="touchUpInside" id="EF0-HD-NsV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="y5R-u4-U6W" firstAttribute="top" secondItem="u7d-f2-cRZ" secondAttribute="top" constant="25" id="BOi-j9-qoV"/>
-                            <constraint firstItem="u7d-f2-cRZ" firstAttribute="trailing" secondItem="y5R-u4-U6W" secondAttribute="trailing" id="KKp-cf-ajA"/>
+                            <constraint firstItem="u7d-f2-cRZ" firstAttribute="trailing" secondItem="y5R-u4-U6W" secondAttribute="trailing" constant="170" id="KKp-cf-ajA"/>
+                            <constraint firstItem="MTo-m8-9c6" firstAttribute="top" secondItem="m78-AC-msQ" secondAttribute="bottom" constant="8" id="Kdt-UW-U2I"/>
                             <constraint firstItem="y5R-u4-U6W" firstAttribute="leading" secondItem="u7d-f2-cRZ" secondAttribute="leading" id="dKf-ga-OZY"/>
                             <constraint firstItem="MTo-m8-9c6" firstAttribute="leading" secondItem="u7d-f2-cRZ" secondAttribute="leading" id="dsv-z6-b6h"/>
+                            <constraint firstItem="m78-AC-msQ" firstAttribute="top" secondItem="u7d-f2-cRZ" secondAttribute="top" constant="25" id="fcS-pQ-sG4"/>
                             <constraint firstItem="MTo-m8-9c6" firstAttribute="top" secondItem="y5R-u4-U6W" secondAttribute="bottom" constant="8" symbolic="YES" id="jwr-yI-OJG"/>
+                            <constraint firstItem="u7d-f2-cRZ" firstAttribute="trailing" secondItem="m78-AC-msQ" secondAttribute="trailing" constant="20" id="lc7-3U-iFQ"/>
+                            <constraint firstItem="m78-AC-msQ" firstAttribute="leading" secondItem="y5R-u4-U6W" secondAttribute="trailing" constant="80" id="mjr-3f-oGU"/>
                             <constraint firstItem="MTo-m8-9c6" firstAttribute="trailing" secondItem="u7d-f2-cRZ" secondAttribute="trailing" id="vXU-Pv-9ho"/>
                             <constraint firstItem="MTo-m8-9c6" firstAttribute="bottom" secondItem="u7d-f2-cRZ" secondAttribute="bottom" id="xYD-6j-hTL"/>
                         </constraints>

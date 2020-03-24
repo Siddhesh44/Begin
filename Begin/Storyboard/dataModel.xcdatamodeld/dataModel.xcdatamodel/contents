@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Example1" representedClassName="Example1" syncable="YES" codeGenerationType="class">
-        <attribute name="pass1" attributeType="String"/>
-        <attribute name="user1" attributeType="String"/>
+    <entity name="DoneTasks" representedClassName="DoneTasks" syncable="YES" codeGenerationType="class">
+        <attribute name="doneDate" optional="YES" attributeType="String"/>
+        <attribute name="doneDesc" optional="YES" attributeType="String"/>
+        <attribute name="doneTitle" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Tasks" representedClassName="Tasks" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="doneDate" optional="YES" attributeType="String"/>
-        <attribute name="doneDesc" optional="YES" attributeType="String"/>
-        <attribute name="doneTitle" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-    </entity>
-    <entity name="Tasks1" representedClassName="Tasks1" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="doneDate" optional="YES" attributeType="String"/>
-        <attribute name="doneDesc" optional="YES" attributeType="String"/>
-        <attribute name="doneTitle" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Example1" positionX="-9" positionY="72" width="128" height="73"/>
-        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="Tasks1" positionX="-36" positionY="45" width="128" height="133"/>
+        <element name="Tasks" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="DoneTasks" positionX="-54" positionY="-9" width="128" height="88"/>
     </elements>
 </model>

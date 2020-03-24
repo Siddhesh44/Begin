@@ -9,8 +9,7 @@
 import UIKit
 import CoreData
 
-// contains competed tasks
-//var taskDone: [TaskModel] = []
+var completedTask: [TaskModel] = []
 class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,28 +18,22 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
-        // fetch completd task from dataModel
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks1")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                
-                // add fetched task from dataModel to taskDone array
-                if let completedTaskTitle = data.value(forKey: "doneTitle") as? String,
-                    let completedTaskDesc = data.value(forKey: "doneDesc") as? String,
-                    let completedTaskDate = data.value(forKey: "doneDate") as? String{
-                    
-                    completedTask.append(TaskModel(title: completedTaskTitle, desc: completedTaskDesc , date: completedTaskDate))
-                    
-                    print("done featching completed task")
-                }
-            }
-        } catch {
-            print("Failed")
-        }
+        
+        fetchingCompletedTask()
         tableView.reloadData()
         print("reload")
+    }
+    
+    
+    @IBAction func clearCompletedTasksButton(_ sender: Any) {
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "DoneTasks")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch {
+            print ("There was an error")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,9 +48,33 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
         cell.tasksData(tasks: Task)
         return cell
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        print("re-load on appear")
     }
     
+    // MARK: Fetch Completed Task
+    func fetchingCompletedTask()
+    {
+        // fetch completd task from dataModel
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "DoneTasks")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                
+                // add fetched task from dataModel to taskDone array
+                if  let completedTaskTitle = data.value(forKey: "doneTitle") as? String,
+                    let completedTaskDesc = data.value(forKey: "doneDesc") as? String,
+                    let completedTaskDate = data.value(forKey: "doneDate") as? String{
+                    
+                    completedTask.append(TaskModel(title: completedTaskTitle, desc: completedTaskDesc , date: completedTaskDate))
+                    print("append complted task to dataModel")
+                }
+            }
+            print("done featching completed task")
+        } catch {
+            print("Failed")
+        }
+    }
 }
