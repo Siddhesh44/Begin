@@ -30,8 +30,8 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
         tTitle.delegate = self
         tDesc.delegate = self
         tDate.delegate = self
-  
-       
+        
+        
         // display date on load
         //
         //        let formatter = DateFormatter()
@@ -49,17 +49,17 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
         // toolbar
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
-
+        
         // done button
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolBar.setItems([doneBtn], animated: true)
-
+        
         // assign toolbar
-
+        
         tDate.inputAccessoryView = toolBar
-
+        
         // assign date picker
-
+        
         tDate.inputView = datePicker
         
         // datePicker mode
@@ -75,7 +75,7 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
         tDate.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-
+    
     
     
     // back to ToDo List
@@ -92,7 +92,7 @@ class addTaskViewController: UIViewController,UITextFieldDelegate {
     
     // disable and enable add button
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if tTitle.text!.isEmpty || tDesc.text!.isEmpty
+        if tTitle.text!.isEmpty || tDesc.text!.isEmpty || tDate.text!.isEmpty
         {
             addTaskButton.isEnabled = false
         }

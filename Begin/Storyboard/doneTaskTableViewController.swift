@@ -10,19 +10,21 @@ import UIKit
 import CoreData
 
 var completedTask: [TaskModel] = []
+
+
 class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var clearBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         
+        clearBtn.layer.cornerRadius = clearBtn.frame.height/2
         fetchingCompletedTask()
         tableView.reloadData()
-        print("reload")
     }
     
     
@@ -33,7 +35,7 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
             try context.execute(deleteRequest)
             try context.save()
         } catch {
-            print ("There was an error")
+            print(error)
         }
         completedTask = []
         tableView.reloadData()
@@ -53,7 +55,6 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
     }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-        print("re-load on appear")
     }
     
     // MARK: Fetch Completed Task
@@ -72,12 +73,10 @@ class doneTaskTableViewController: UIViewController,UITableViewDelegate,UITableV
                     let completedTaskDate = data.value(forKey: "doneDate") as? String{
                     
                     completedTask.append(TaskModel(title: completedTaskTitle, desc: completedTaskDesc , date: completedTaskDate))
-                    print("append complted task to dataModel")
                 }
             }
-            print("done featching completed task")
         } catch {
-            print("Failed")
+            print(error)
         }
     }
 }
