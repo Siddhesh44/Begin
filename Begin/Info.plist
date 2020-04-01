@@ -4,14 +4,15 @@
 <dict>
 	<key></key>
 	<string></string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-         <key>NSAllowsArbitraryLoads</key><true/>
-    </dict> 
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleVersion</key>
@@ -27,8 +28,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleGetInfoString</key>
-	<string></string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleExecutable</key>
@@ -66,10 +65,10 @@
 				<dict>
 					<key>UISceneStoryboardFile</key>
 					<string>Main</string>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
 				</dict>
 			</array>
 		</dict>
@@ -83,6 +82,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>CFBundleGetInfoString</key>
 	<string></string>
 </dict>
 </plist>
