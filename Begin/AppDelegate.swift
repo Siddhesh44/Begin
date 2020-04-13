@@ -10,32 +10,94 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
-
-
+import GoogleSignIn
+import FacebookCore
+import FacebookLogin
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
+    
+    // MARK: Google Maps
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // facebook login
+        
+ ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
+        
+        //  google sign in
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "680292199758-m3ecidbj52kldh3iqq92so7pd26deeae.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
+        
+        // google map
         GMSServices.provideAPIKey("AIzaSyAwLo1vEGHJzCq-hAstZWOcaXQAlPNIBPg")
         
         GMSPlacesClient.provideAPIKey("AIzaSyAwLo1vEGHJzCq-hAstZWOcaXQAlPNIBPg")
         
         return true
     }
-
+    
+    // facebook
+    
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+        
+        
+        // for facebook
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+        
+        // for google
+        return GIDSignIn.sharedInstance().handle(url)
+        
+    }
+    
+    
+    
+    // MARK: Google Sign In
+    
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        print("User Disconnected")
+    }
+    
+    
+    
     // MARK: UISceneSession Lifecycle
-
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
@@ -43,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    
+    // MARK: Core Data
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -86,7 +148,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
-
 }
 
