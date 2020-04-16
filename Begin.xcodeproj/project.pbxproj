@@ -31,6 +31,10 @@
 		F657EC9D2425F13B00A3FF30 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F657EC9B2425F13B00A3FF30 /* dataModel.xcdatamodeld */; };
 		F657EC9F2425FF2D00A3FF30 /* coreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657EC9E2425FF2D00A3FF30 /* coreDataViewController.swift */; };
 		F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6682B272441D28D00F94C0A /* swiftyJSONExViewController.swift */; };
+		F668D55F244451A900259A2A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D55E244451A900259A2A /* ContactViewController.swift */; };
+		F668D5612444521E00259A2A /* addContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D5602444521E00259A2A /* addContactViewController.swift */; };
+		F668D56C2445A58C00259A2A /* showContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D56B2445A58C00259A2A /* showContactsCell.swift */; };
+		F668D56E2445A5E700259A2A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D56D2445A5E700259A2A /* Contact.swift */; };
 		F6704968243D9E5000851B2D /* alamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6704967243D9E5000851B2D /* alamofireViewController.swift */; };
 		F683207824363A7000B15B01 /* edgePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207724363A7000B15B01 /* edgePanViewController.swift */; };
 		F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207D2437088F00B15B01 /* toolsViewController.swift */; };
@@ -87,6 +91,10 @@
 		F657EC9C2425F13B00A3FF30 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		F657EC9E2425FF2D00A3FF30 /* coreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataViewController.swift; sourceTree = "<group>"; };
 		F6682B272441D28D00F94C0A /* swiftyJSONExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftyJSONExViewController.swift; sourceTree = "<group>"; };
+		F668D55E244451A900259A2A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		F668D5602444521E00259A2A /* addContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addContactViewController.swift; sourceTree = "<group>"; };
+		F668D56B2445A58C00259A2A /* showContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showContactsCell.swift; sourceTree = "<group>"; };
+		F668D56D2445A5E700259A2A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		F6704967243D9E5000851B2D /* alamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireViewController.swift; sourceTree = "<group>"; };
 		F683207724363A7000B15B01 /* edgePanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edgePanViewController.swift; sourceTree = "<group>"; };
 		F683207D2437088F00B15B01 /* toolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				581269602412152A002A7C20 /* Main.storyboard */,
+				F668D5602444521E00259A2A /* addContactViewController.swift */,
+				F668D56B2445A58C00259A2A /* showContactsCell.swift */,
+				F668D56D2445A5E700259A2A /* Contact.swift */,
+				F668D55E244451A900259A2A /* ContactViewController.swift */,
 				F68F25E22440856200A05F2F /* pickerViewController.swift */,
 				F68F25E0243F30B600A05F2F /* fgLogOutViewController.swift */,
 				F6704967243D9E5000851B2D /* alamofireViewController.swift */,
@@ -403,10 +415,13 @@
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
 				F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */,
 				5840F3082418E04900BE4985 /* tableViewController.swift in Sources */,
+				F668D5612444521E00259A2A /* addContactViewController.swift in Sources */,
 				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,
+				F668D56E2445A5E700259A2A /* Contact.swift in Sources */,
 				F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */,
 				F68F25E32440856200A05F2F /* pickerViewController.swift in Sources */,
 				F61800C42435AF7400FA5942 /* gestureRecognizerViewController.swift in Sources */,
+				F668D55F244451A900259A2A /* ContactViewController.swift in Sources */,
 				F68E86A0241F5F4A0029FA17 /* collectionViewController.swift in Sources */,
 				F657EC9F2425FF2D00A3FF30 /* coreDataViewController.swift in Sources */,
 				F68F25E1243F30B600A05F2F /* fgLogOutViewController.swift in Sources */,
@@ -417,6 +432,7 @@
 				F61800C62435CEFF00FA5942 /* pinchGestureViewController.swift in Sources */,
 				F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */,
 				F6E3B18A2423851F0007CAC6 /* doneTaskTableViewController.swift in Sources */,
+				F668D56C2445A58C00259A2A /* showContactsCell.swift in Sources */,
 				F68E86A2241F62220029FA17 /* newCollectionViewCell.swift in Sources */,
 				F6F8EC2C2433491500FF3C23 /* gcdViewController.swift in Sources */,
 			);
