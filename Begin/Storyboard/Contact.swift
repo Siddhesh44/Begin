@@ -11,7 +11,7 @@ import UIKit
 
 class Contact{
     
-   // var profilePic: UIImage
+    // var profilePic: UIImage
     var firstName: String
     var lastName: String
     var phoneNumber: String

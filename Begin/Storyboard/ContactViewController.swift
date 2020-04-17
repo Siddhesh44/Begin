@@ -10,53 +10,26 @@ import UIKit
 import CoreData
 import Contacts
 
-// Refer to persistentContainer
-let appDelegate1 = UIApplication.shared.delegate as! AppDelegate
-// create a context from container.
-let context1 = appDelegate.persistentContainer.viewContext
-
 class ContactViewController: UIViewController {
     
-    var contacts:[Contact] = []
+    var tableDataSource = tableViewDataSource()
+    let contcatApi = ContactAPIHelper()
+    
+//    let store = CNContactStore()
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: setting delegates
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.dataSource = tableDataSource
         searchBar.delegate = self
         
         settingGesture()
         
-        //fetch contacts from data model
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Contacts")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                
-                // add saved contacts from dataModel to contacts array on load
-                if  /*let savedProfilePic = data.value(forKey: "profilePic") as? UIImage,*/
-                    let savedFirstName = data.value(forKey: "firstName") as? String,
-                    let savedLastName = data.value(forKey: "lastName") as? String,
-                    let savedPhoneNumber = data.value(forKey: "phoneNumber") as? String,
-                    let savedEmailId = data.value(forKey: "emailId") as? String{
-                    
-                    contacts.append(Contact(/*profilePic: savedProfilePic,*/firstName: savedFirstName, lastName: savedLastName, phoneNumber: savedPhoneNumber, emailId: savedEmailId))
-                }
-            }
-        }catch {
-            print(error)
-        }
-        
-        fetchContacts()
-        contacts.sort(by: {$0.lastName < $1.lastName})
+        contcatApi.checkForContactsPermission()
+        tableDataSource.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
     }
-    
-  
     
     // MARK: Gesture setUp
     func settingGesture()
@@ -71,45 +44,50 @@ class ContactViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
     @IBAction func unwindFromAddContactVC(_ sender: UIStoryboardSegue){
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Contacts", in: context)
-        let contactsData = NSManagedObject(entity: entity!, insertInto: context)
         
         if sender.source is addContactViewController{
             if let senderVC = sender.source as? addContactViewController{
                 let newContact = Contact(/*profilePic: senderVC.profilePic,*/firstName: senderVC.firstName, lastName: senderVC.lastName, phoneNumber: senderVC.phoneNumber, emailId: senderVC.emailId)
                 
-                contacts.append(newContact)
-                contacts.sort(by: {$0.lastName < $1.lastName})
+                tableDataSource.contacts.append(newContact)
+                tableDataSource.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
+                tableView.reloadData()
                 
-                //let imageInPNGFormat = senderVC.profilePic.pngData()
-                // print("image in png format \(imageInPNGFormat!)")
-                // saving new task data into data model
-                // contactsData.setValue(imageInPNGFormat, forKey: "profilePic")
-                contactsData.setValue(senderVC.firstName, forKey: "firstName")
-                contactsData.setValue(senderVC.lastName, forKey: "lastName")
-                contactsData.setValue(senderVC.phoneNumber, forKey: "phoneNumber")
-                contactsData.setValue(senderVC.emailId, forKey: "emailId")
+                /*
+                // saving contacts in contact api
                 
-                do {
-                    try context.save()
+                let saveContact = CNMutableContact()
+                saveContact.givenName = senderVC.firstName
+                saveContact.familyName = senderVC.lastName
+                saveContact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: senderVC.phoneNumber))]
+                saveContact.emailAddresses = [CNLabeledValue(label: CNLabelWork, value: senderVC.emailId as NSString)]
+                
+                let storeRequest = CNSaveRequest()
+                storeRequest.add(saveContact, toContainerWithIdentifier: nil)
+                do{
+                    try contcatApi.store.execute(storeRequest)
+                    print("contact saved successfully..")
                     tableView.reloadData()
-                } catch {
-                    print(error)
                 }
-                
+                catch let err{
+                    print("failed to save Contact",err)
+                }
+ */
             }
         }
     }
     
+    
     // MARK: fetching Contact
     
-    func fetchContacts()
+    /*
+    func checkForContactsPermission()
     {
         print("Attempt to fetch Contacts....")
         
-        let store = CNContactStore()
+        
         
         // checking or requesting access
         store.requestAccess(for: .contacts) { (granted, err) in
@@ -117,59 +95,46 @@ class ContactViewController: UIViewController {
                 print("falied to request access",err)
                 return
             }
-            
             if granted  {
-                
                 print("access granted")
-                
-                let keys = [CNContactGivenNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey,CNContactEmailAddressesKey]
-                let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-                
-                do {
-                    try store.enumerateContacts(with: request) { (contact, stopPointerIfYouWantTOStopEnumerating) in
-                        let givenName = contact.givenName
-                        let familyName = contact.familyName
-                        let phoneNumber = contact.phoneNumbers.first?.value.stringValue ?? "no number found"
-                        let email = contact.emailAddresses.first?.value ?? "no email found"
-                        
-                        let fethedContact = Contact(firstName: givenName, lastName: familyName, phoneNumber: phoneNumber, emailId: email as String)
-                        self.contacts.append(fethedContact)
-                        self.contacts.sort(by: {$0.lastName < $1.lastName})
-                        
-                    }
-                } catch let err {
-                    print("failed to enumerate contacts..", err)
-                }
-                
-                
+                self.fetchContact()
             }
             else{
                 print("access denied")
             }
         }
     }
-    
+ */
+    /*
+    func fetchContact()
+    {
+        let keys = [CNContactGivenNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey,CNContactEmailAddressesKey]
+        let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+        
+        do {
+            try store.enumerateContacts(with: request) { (contact, stopPointerIfYouWantTOStopEnumerating) in
+                
+                print("access contact.givenName \(contact.givenName)")
+                let givenName = contact.givenName
+                let familyName = contact.familyName
+                let phoneNumber = contact.phoneNumbers.first?.value.stringValue ?? "no number found"
+                let email = contact.emailAddresses.first?.value ?? "no email found"
+                
+                let fethedContact = Contact(firstName: givenName, lastName: familyName, phoneNumber: phoneNumber, emailId: email as String)
+                self.contacts.append(fethedContact)
+                self.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
+                print("access fethedContact --")
+            }
+        } catch let err {
+            print("failed to enumerate contacts..", err)
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+ */
 }
 
-// MARK: table View Delegate
-extension ContactViewController: UITableViewDelegate,UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showContact", for: indexPath) as! showContactsCell
-        
-        cell.setContact(contact: contacts[indexPath.row])
-        return cell
-    }
-}
 
 // MARK: searchBar Delegate
 extension ContactViewController: UISearchBarDelegate{

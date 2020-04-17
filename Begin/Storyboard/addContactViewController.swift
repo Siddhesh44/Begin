@@ -34,13 +34,12 @@ class addContactViewController: UIViewController {
         setPhoneNumber.delegate = self
         setEmail.delegate = self
         
-        settingUpGesture()
+        settingUpGesture1()
         
-        imageView.layer.cornerRadius = imageView.frame.height / 2
-        imageView.clipsToBounds = true
+        self.managingKeyBoard()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        imageView.roundedImage()
+
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -49,27 +48,19 @@ class addContactViewController: UIViewController {
     
     
     // MARK: Gesture Setup
-    func settingUpGesture()
+    func settingUpGesture1()
     {
-        // Tap Gesture
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
-        view.addGestureRecognizer(tap)
-        
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(selectProfilePic))
         imageView.addGestureRecognizer(imageTap)
-        
+
         let addImageLblTap = UITapGestureRecognizer(target: self, action: #selector(selectProfilePic))
         addProfilePicLbl.addGestureRecognizer(addImageLblTap)
     }
     
-    @objc func tapGesture()
-    {
-        view.endEditing(true)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if /*let newProfilePic = imageView.image,*/let newFirstName = setFirstName.text, let newLastName = setLastName.text, let newPhoneNumber = setPhoneNumber.text, let newEmailId = setEmail.text{
-            
+
             //profilePic = newProfilePic
             firstName = newFirstName
             lastName = newLastName
@@ -90,14 +81,14 @@ extension addContactViewController: UITextFieldDelegate {
         return true
     }
     
-    @objc func keyboardWillShow(notification: Notification)
+    @objc func keyboardWillShow1(notification: Notification)
     {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             scrollView.contentInset.bottom = keyboardSize.height
         }
     }
     
-    @objc func keyboardWillHide(notification: Notification)
+    @objc func keyboardWillHide1(notification: Notification)
     {
         scrollView.contentInset.bottom = 0
     }
@@ -109,7 +100,7 @@ extension addContactViewController: UINavigationControllerDelegate,UIImagePicker
     
     @objc func selectProfilePic()
     {
-       let imageController = UIImagePickerController()
+        let imageController = UIImagePickerController()
         imageController.delegate = self
         imageController.sourceType = .photoLibrary
         self.present(imageController,animated: true,completion: nil)
@@ -117,7 +108,7 @@ extension addContactViewController: UINavigationControllerDelegate,UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let tempImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            imageView.image  = tempImage
+        imageView.image  = tempImage
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -53,6 +53,9 @@
 		F6954EE3243C8ECD00900736 /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */; };
 		F6A3B0EC243745A7008C03FB /* alamofireExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */; };
 		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
+		F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2790C244886FD0018566C /* ContactAPIHelper.swift */; };
+		F6D279112449B6960018566C /* tableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279102449B6960018566C /* tableViewDataSource.swift */; };
+		F6D279132449C2110018566C /* contactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279122449C2100018566C /* contactExtension.swift */; };
 		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 		F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */; };
 		F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B183242247360007CAC6 /* TaskModel.swift */; };
@@ -110,6 +113,9 @@
 		F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
 		F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireExampleViewController.swift; sourceTree = "<group>"; };
 		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
+		F6D2790C244886FD0018566C /* ContactAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIHelper.swift; sourceTree = "<group>"; };
+		F6D279102449B6960018566C /* tableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewDataSource.swift; sourceTree = "<group>"; };
+		F6D279122449C2100018566C /* contactExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactExtension.swift; sourceTree = "<group>"; };
 		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		F6E3B183242247360007CAC6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -196,8 +202,11 @@
 			children = (
 				581269602412152A002A7C20 /* Main.storyboard */,
 				F668D5602444521E00259A2A /* addContactViewController.swift */,
-				F668D56B2445A58C00259A2A /* showContactsCell.swift */,
+				F6D279122449C2100018566C /* contactExtension.swift */,
 				F668D56D2445A5E700259A2A /* Contact.swift */,
+				F668D56B2445A58C00259A2A /* showContactsCell.swift */,
+				F6D2790C244886FD0018566C /* ContactAPIHelper.swift */,
+				F6D279102449B6960018566C /* tableViewDataSource.swift */,
 				F668D55E244451A900259A2A /* ContactViewController.swift */,
 				F68F25E22440856200A05F2F /* pickerViewController.swift */,
 				F68F25E0243F30B600A05F2F /* fgLogOutViewController.swift */,
@@ -401,6 +410,7 @@
 				F61800CC243617A600FA5942 /* panViewController.swift in Sources */,
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */,
+				F6D279112449B6960018566C /* tableViewDataSource.swift in Sources */,
 				F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */,
 				F683207824363A7000B15B01 /* edgePanViewController.swift in Sources */,
 				F649CE5B243224C600A2AB5F /* userDefaultsViewController.swift in Sources */,
@@ -427,9 +437,11 @@
 				F68F25E1243F30B600A05F2F /* fgLogOutViewController.swift in Sources */,
 				5812697724128D98002A7C20 /* DataViewController.swift in Sources */,
 				F657EC9D2425F13B00A3FF30 /* dataModel.xcdatamodeld in Sources */,
+				F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */,
 				F6954EE3243C8ECD00900736 /* UITextFieldPadding.swift in Sources */,
 				5812695D2412152A002A7C20 /* SceneDelegate.swift in Sources */,
 				F61800C62435CEFF00FA5942 /* pinchGestureViewController.swift in Sources */,
+				F6D279132449C2110018566C /* contactExtension.swift in Sources */,
 				F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */,
 				F6E3B18A2423851F0007CAC6 /* doneTaskTableViewController.swift in Sources */,
 				F668D56C2445A58C00259A2A /* showContactsCell.swift in Sources */,
