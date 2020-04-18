@@ -15,8 +15,6 @@ class ContactViewController: UIViewController {
     var tableDataSource = tableViewDataSource()
     let contcatApi = ContactAPIHelper()
     
-//    let store = CNContactStore()
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -24,10 +22,12 @@ class ContactViewController: UIViewController {
         
         tableView.dataSource = tableDataSource
         searchBar.delegate = self
+        contcatApi.delegate = self
         
         settingGesture()
         
         contcatApi.checkForContactsPermission()
+        
         tableDataSource.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
     }
     
@@ -53,91 +53,19 @@ class ContactViewController: UIViewController {
                 
                 tableDataSource.contacts.append(newContact)
                 tableDataSource.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
+                
+                contcatApi.addContact(givenName: senderVC.firstName, familyName: senderVC.lastName, phoneNumber: senderVC.phoneNumber, emailId: senderVC.emailId)
+                
                 tableView.reloadData()
-                
-                /*
-                // saving contacts in contact api
-                
-                let saveContact = CNMutableContact()
-                saveContact.givenName = senderVC.firstName
-                saveContact.familyName = senderVC.lastName
-                saveContact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberMain, value: CNPhoneNumber(stringValue: senderVC.phoneNumber))]
-                saveContact.emailAddresses = [CNLabeledValue(label: CNLabelWork, value: senderVC.emailId as NSString)]
-                
-                let storeRequest = CNSaveRequest()
-                storeRequest.add(saveContact, toContainerWithIdentifier: nil)
-                do{
-                    try contcatApi.store.execute(storeRequest)
-                    print("contact saved successfully..")
-                    tableView.reloadData()
-                }
-                catch let err{
-                    print("failed to save Contact",err)
-                }
- */
             }
         }
     }
-    
-    
-    // MARK: fetching Contact
-    
-    /*
-    func checkForContactsPermission()
-    {
-        print("Attempt to fetch Contacts....")
-        
-        
-        
-        // checking or requesting access
-        store.requestAccess(for: .contacts) { (granted, err) in
-            if let err = err{
-                print("falied to request access",err)
-                return
-            }
-            if granted  {
-                print("access granted")
-                self.fetchContact()
-            }
-            else{
-                print("access denied")
-            }
-        }
-    }
- */
-    /*
-    func fetchContact()
-    {
-        let keys = [CNContactGivenNameKey,CNContactFamilyNameKey,CNContactPhoneNumbersKey,CNContactEmailAddressesKey]
-        let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
-        
-        do {
-            try store.enumerateContacts(with: request) { (contact, stopPointerIfYouWantTOStopEnumerating) in
-                
-                print("access contact.givenName \(contact.givenName)")
-                let givenName = contact.givenName
-                let familyName = contact.familyName
-                let phoneNumber = contact.phoneNumbers.first?.value.stringValue ?? "no number found"
-                let email = contact.emailAddresses.first?.value ?? "no email found"
-                
-                let fethedContact = Contact(firstName: givenName, lastName: familyName, phoneNumber: phoneNumber, emailId: email as String)
-                self.contacts.append(fethedContact)
-                self.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
-                print("access fethedContact --")
-            }
-        } catch let err {
-            print("failed to enumerate contacts..", err)
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
- */
 }
 
 
 // MARK: searchBar Delegate
 extension ContactViewController: UISearchBarDelegate{
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = nil
@@ -145,5 +73,20 @@ extension ContactViewController: UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+}
+
+
+extension ContactViewController: ContactApiDelegate{
+    
+    func didReceivePermissionStatus(message: String) {
+        print("didReceivePermissionStatus",message)
+    }
+    
+    func didFetchContacts(fetchedContacts: [Contact]) {
+        
+        print("after recveing \(fetchedContacts.isEmpty)")
+        tableDataSource.contacts = fetchedContacts
+        
     }
 }
