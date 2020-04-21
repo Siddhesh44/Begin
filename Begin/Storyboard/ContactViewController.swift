@@ -34,12 +34,12 @@ class ContactViewController: UIViewController {
     // MARK: Gesture setUp
     func settingGesture()
     {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture2))
         view.addGestureRecognizer(tap)
     }
     
     // Tap gesture
-    @objc func tapGesture()
+    @objc func tapGesture2()
     {
         view.endEditing(true)
     }

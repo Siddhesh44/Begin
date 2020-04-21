@@ -110,7 +110,7 @@ class alamofireExampleViewController: UIViewController,GIDSignInDelegate{
     func settingUpGestures()
     {
         // tap gesture
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture1))
         self.view.addGestureRecognizer(tap)
         
         let signUpTap = UITapGestureRecognizer(target: self, action: #selector(signUpTapped))
@@ -122,7 +122,7 @@ class alamofireExampleViewController: UIViewController,GIDSignInDelegate{
     
     // Gestures functions
     
-    @objc func tapGesture()
+    @objc func tapGesture1()
     {
         view.endEditing(true)
     }
