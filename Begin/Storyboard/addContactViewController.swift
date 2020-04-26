@@ -39,7 +39,7 @@ class addContactViewController: UIViewController {
         self.managingKeyBoard()
         
         imageView.roundedImage()
-
+        
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
@@ -52,7 +52,7 @@ class addContactViewController: UIViewController {
     {
         let imageTap = UITapGestureRecognizer(target: self, action: #selector(selectProfilePic))
         imageView.addGestureRecognizer(imageTap)
-
+        
         let addImageLblTap = UITapGestureRecognizer(target: self, action: #selector(selectProfilePic))
         addProfilePicLbl.addGestureRecognizer(addImageLblTap)
     }
@@ -60,7 +60,7 @@ class addContactViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if /*let newProfilePic = imageView.image,*/let newFirstName = setFirstName.text, let newLastName = setLastName.text, let newPhoneNumber = setPhoneNumber.text, let newEmailId = setEmail.text{
-
+            
             //profilePic = newProfilePic
             firstName = newFirstName
             lastName = newLastName

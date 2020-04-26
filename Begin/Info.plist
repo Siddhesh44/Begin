@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>TofinoProPersonalCond-Bold.otf</string>
-		<string>TofinoProPersonalCond-Regular.otf</string>
+		<string>Tofino-Regular.ttf</string>
+		<string>Tofino-Bold.ttf</string>
 	</array>
 	<key>NSContactsUsageDescription</key>
 	<string>App wants to access your Contacts!!</string>

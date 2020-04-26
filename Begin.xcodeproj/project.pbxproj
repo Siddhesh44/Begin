@@ -35,9 +35,14 @@
 		F668D5612444521E00259A2A /* addContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D5602444521E00259A2A /* addContactViewController.swift */; };
 		F668D56C2445A58C00259A2A /* showContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D56B2445A58C00259A2A /* showContactsCell.swift */; };
 		F668D56E2445A5E700259A2A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F668D56D2445A5E700259A2A /* Contact.swift */; };
+		F6692DC5245087E100BD6008 /* popUpViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6692DC4245087E100BD6008 /* popUpViewViewController.swift */; };
 		F669615F244B187200049133 /* barberShopExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F669615E244B187200049133 /* barberShopExtension.swift */; };
 		F6696161244B1C2B00049133 /* barberShopColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6696160244B1C2B00049133 /* barberShopColors.swift */; };
 		F6696163244B36A600049133 /* barberShopLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6696162244B36A600049133 /* barberShopLoginVC.swift */; };
+		F6696F962451AF24006D5F4D /* Tofino-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6696F952451AF23006D5F4D /* Tofino-Regular.ttf */; };
+		F6696F982451B018006D5F4D /* Tofino-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6696F972451B018006D5F4D /* Tofino-Bold.ttf */; };
+		F6696F9A2452FFA3006D5F4D /* barberShopHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */; };
+		F6696F9C245419D6006D5F4D /* barberShopNearByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */; };
 		F6704968243D9E5000851B2D /* alamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6704967243D9E5000851B2D /* alamofireViewController.swift */; };
 		F683207824363A7000B15B01 /* edgePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207724363A7000B15B01 /* edgePanViewController.swift */; };
 		F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207D2437088F00B15B01 /* toolsViewController.swift */; };
@@ -55,7 +60,6 @@
 		F68F25E32440856200A05F2F /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F25E22440856200A05F2F /* pickerViewController.swift */; };
 		F6954EE3243C8ECD00900736 /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */; };
 		F6977699244D8BA400E30B6D /* barberShopSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */; };
-		F697769C244DDBEE00E30B6D /* Tofino_Pro in Resources */ = {isa = PBXBuildFile; fileRef = F697769B244DDBEE00E30B6D /* Tofino_Pro */; };
 		F6A3B0EC243745A7008C03FB /* alamofireExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */; };
 		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
 		F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2790C244886FD0018566C /* ContactAPIHelper.swift */; };
@@ -104,9 +108,14 @@
 		F668D5602444521E00259A2A /* addContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addContactViewController.swift; sourceTree = "<group>"; };
 		F668D56B2445A58C00259A2A /* showContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showContactsCell.swift; sourceTree = "<group>"; };
 		F668D56D2445A5E700259A2A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		F6692DC4245087E100BD6008 /* popUpViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popUpViewViewController.swift; sourceTree = "<group>"; };
 		F669615E244B187200049133 /* barberShopExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopExtension.swift; sourceTree = "<group>"; };
 		F6696160244B1C2B00049133 /* barberShopColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopColors.swift; sourceTree = "<group>"; };
 		F6696162244B36A600049133 /* barberShopLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopLoginVC.swift; sourceTree = "<group>"; };
+		F6696F952451AF23006D5F4D /* Tofino-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tofino-Regular.ttf"; sourceTree = "<group>"; };
+		F6696F972451B018006D5F4D /* Tofino-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tofino-Bold.ttf"; sourceTree = "<group>"; };
+		F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopHomeVC.swift; sourceTree = "<group>"; };
+		F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopNearByVC.swift; sourceTree = "<group>"; };
 		F6704967243D9E5000851B2D /* alamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireViewController.swift; sourceTree = "<group>"; };
 		F683207724363A7000B15B01 /* edgePanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edgePanViewController.swift; sourceTree = "<group>"; };
 		F683207D2437088F00B15B01 /* toolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +130,6 @@
 		F68F25E22440856200A05F2F /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
 		F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopSignUpVC.swift; sourceTree = "<group>"; };
-		F697769B244DDBEE00E30B6D /* Tofino_Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tofino_Pro; sourceTree = "<group>"; };
 		F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireExampleViewController.swift; sourceTree = "<group>"; };
 		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
 		F6D2790C244886FD0018566C /* ContactAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIHelper.swift; sourceTree = "<group>"; };
@@ -214,11 +222,14 @@
 			children = (
 				F697769A244DDB4E00E30B6D /* barber shop fonts */,
 				581269602412152A002A7C20 /* Main.storyboard */,
+				F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */,
+				F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */,
 				F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */,
-				F6696162244B36A600049133 /* barberShopLoginVC.swift */,
 				F6696160244B1C2B00049133 /* barberShopColors.swift */,
 				F669615E244B187200049133 /* barberShopExtension.swift */,
 				F6D27917244AE98D0018566C /* barberAppViewController.swift */,
+				F6692DC4245087E100BD6008 /* popUpViewViewController.swift */,
+				F6696162244B36A600049133 /* barberShopLoginVC.swift */,
 				F668D5602444521E00259A2A /* addContactViewController.swift */,
 				F6D279122449C2100018566C /* contactExtension.swift */,
 				F668D56D2445A5E700259A2A /* Contact.swift */,
@@ -296,7 +307,8 @@
 		F697769A244DDB4E00E30B6D /* barber shop fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F697769B244DDBEE00E30B6D /* Tofino_Pro */,
+				F6696F952451AF23006D5F4D /* Tofino-Regular.ttf */,
+				F6696F972451B018006D5F4D /* Tofino-Bold.ttf */,
 			);
 			path = "barber shop fonts";
 			sourceTree = "<group>";
@@ -369,11 +381,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6696F962451AF24006D5F4D /* Tofino-Regular.ttf in Resources */,
 				5812696724121534002A7C20 /* LaunchScreen.storyboard in Resources */,
+				F6696F982451B018006D5F4D /* Tofino-Bold.ttf in Resources */,
 				5812696424121534002A7C20 /* Assets.xcassets in Resources */,
 				F6F8EC2E2433813F00FF3C23 /* Podfile in Resources */,
 				581269622412152A002A7C20 /* Main.storyboard in Resources */,
-				F697769C244DDBEE00E30B6D /* Tofino_Pro in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +445,7 @@
 				F6696161244B1C2B00049133 /* barberShopColors.swift in Sources */,
 				F61800C224346DD700FA5942 /* coreLocationViewController.swift in Sources */,
 				F63206162438587C000B86B6 /* textViewController.swift in Sources */,
+				F6692DC5245087E100BD6008 /* popUpViewViewController.swift in Sources */,
 				5812695F2412152A002A7C20 /* ViewController.swift in Sources */,
 				F6704968243D9E5000851B2D /* alamofireViewController.swift in Sources */,
 				5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */,
@@ -454,10 +468,12 @@
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
 				F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */,
 				5840F3082418E04900BE4985 /* tableViewController.swift in Sources */,
+				F6696F9C245419D6006D5F4D /* barberShopNearByVC.swift in Sources */,
 				F668D5612444521E00259A2A /* addContactViewController.swift in Sources */,
 				F6977699244D8BA400E30B6D /* barberShopSignUpVC.swift in Sources */,
 				F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */,
 				F668D56E2445A5E700259A2A /* Contact.swift in Sources */,
+				F6696F9A2452FFA3006D5F4D /* barberShopHomeVC.swift in Sources */,
 				F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */,
 				F68F25E32440856200A05F2F /* pickerViewController.swift in Sources */,
 				F61800C42435AF7400FA5942 /* gestureRecognizerViewController.swift in Sources */,
