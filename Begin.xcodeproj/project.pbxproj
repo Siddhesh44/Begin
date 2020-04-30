@@ -28,6 +28,7 @@
 		F63206162438587C000B86B6 /* textViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63206152438587C000B86B6 /* textViewController.swift */; };
 		F649CE59243200E600A2AB5F /* CS193PViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F649CE58243200E600A2AB5F /* CS193PViewController.swift */; };
 		F649CE5B243224C600A2AB5F /* userDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F649CE5A243224C600A2AB5F /* userDefaultsViewController.swift */; };
+		F650FDAD24572C7B00A20125 /* shopCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F650FDAC24572C7B00A20125 /* shopCollectionView.swift */; };
 		F657EC9D2425F13B00A3FF30 /* dataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F657EC9B2425F13B00A3FF30 /* dataModel.xcdatamodeld */; };
 		F657EC9F2425FF2D00A3FF30 /* coreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657EC9E2425FF2D00A3FF30 /* coreDataViewController.swift */; };
 		F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6682B272441D28D00F94C0A /* swiftyJSONExViewController.swift */; };
@@ -62,10 +63,16 @@
 		F6977699244D8BA400E30B6D /* barberShopSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */; };
 		F6A3B0EC243745A7008C03FB /* alamofireExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */; };
 		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
+		F6C3F08224580867000887AE /* barberShopDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3F08124580867000887AE /* barberShopDataModel.swift */; };
+		F6C3F08424580E08000887AE /* barberShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3F08324580E08000887AE /* barberShopData.swift */; };
 		F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2790C244886FD0018566C /* ContactAPIHelper.swift */; };
 		F6D279112449B6960018566C /* tableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279102449B6960018566C /* tableViewDataSource.swift */; };
 		F6D279132449C2110018566C /* contactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279122449C2100018566C /* contactExtension.swift */; };
 		F6D27918244AE98D0018566C /* barberAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D27917244AE98D0018566C /* barberAppViewController.swift */; };
+		F6D451322456E29800B7627B /* tableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451312456E29800B7627B /* tableCell.swift */; };
+		F6D451342456E44E00B7627B /* collectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451332456E44E00B7627B /* collectionCell.swift */; };
+		F6D451382456EBBC00B7627B /* servicesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451372456EBBC00B7627B /* servicesTableView.swift */; };
+		F6D4513A2456EC1100B7627B /* categoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451392456EC1100B7627B /* categoryCollectionView.swift */; };
 		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 		F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */; };
 		F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B183242247360007CAC6 /* TaskModel.swift */; };
@@ -101,6 +108,7 @@
 		F63206152438587C000B86B6 /* textViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewController.swift; sourceTree = "<group>"; };
 		F649CE58243200E600A2AB5F /* CS193PViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS193PViewController.swift; sourceTree = "<group>"; };
 		F649CE5A243224C600A2AB5F /* userDefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDefaultsViewController.swift; sourceTree = "<group>"; };
+		F650FDAC24572C7B00A20125 /* shopCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopCollectionView.swift; sourceTree = "<group>"; };
 		F657EC9C2425F13B00A3FF30 /* dataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataModel.xcdatamodel; sourceTree = "<group>"; };
 		F657EC9E2425FF2D00A3FF30 /* coreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataViewController.swift; sourceTree = "<group>"; };
 		F6682B272441D28D00F94C0A /* swiftyJSONExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftyJSONExViewController.swift; sourceTree = "<group>"; };
@@ -132,10 +140,16 @@
 		F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopSignUpVC.swift; sourceTree = "<group>"; };
 		F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireExampleViewController.swift; sourceTree = "<group>"; };
 		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
+		F6C3F08124580867000887AE /* barberShopDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopDataModel.swift; sourceTree = "<group>"; };
+		F6C3F08324580E08000887AE /* barberShopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopData.swift; sourceTree = "<group>"; };
 		F6D2790C244886FD0018566C /* ContactAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIHelper.swift; sourceTree = "<group>"; };
 		F6D279102449B6960018566C /* tableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewDataSource.swift; sourceTree = "<group>"; };
 		F6D279122449C2100018566C /* contactExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactExtension.swift; sourceTree = "<group>"; };
 		F6D27917244AE98D0018566C /* barberAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberAppViewController.swift; sourceTree = "<group>"; };
+		F6D451312456E29800B7627B /* tableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableCell.swift; sourceTree = "<group>"; };
+		F6D451332456E44E00B7627B /* collectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionCell.swift; sourceTree = "<group>"; };
+		F6D451372456EBBC00B7627B /* servicesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicesTableView.swift; sourceTree = "<group>"; };
+		F6D451392456EC1100B7627B /* categoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCollectionView.swift; sourceTree = "<group>"; };
 		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		F6E3B183242247360007CAC6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -222,6 +236,13 @@
 			children = (
 				F697769A244DDB4E00E30B6D /* barber shop fonts */,
 				581269602412152A002A7C20 /* Main.storyboard */,
+				F6C3F08324580E08000887AE /* barberShopData.swift */,
+				F6C3F08124580867000887AE /* barberShopDataModel.swift */,
+				F6D451332456E44E00B7627B /* collectionCell.swift */,
+				F650FDAC24572C7B00A20125 /* shopCollectionView.swift */,
+				F6D451392456EC1100B7627B /* categoryCollectionView.swift */,
+				F6D451312456E29800B7627B /* tableCell.swift */,
+				F6D451372456EBBC00B7627B /* servicesTableView.swift */,
 				F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */,
 				F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */,
 				F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */,
@@ -440,17 +461,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */,
+				F6D451342456E44E00B7627B /* collectionCell.swift in Sources */,
 				F669615F244B187200049133 /* barberShopExtension.swift in Sources */,
 				F649CE59243200E600A2AB5F /* CS193PViewController.swift in Sources */,
 				F6696161244B1C2B00049133 /* barberShopColors.swift in Sources */,
+				F6D451382456EBBC00B7627B /* servicesTableView.swift in Sources */,
 				F61800C224346DD700FA5942 /* coreLocationViewController.swift in Sources */,
 				F63206162438587C000B86B6 /* textViewController.swift in Sources */,
 				F6692DC5245087E100BD6008 /* popUpViewViewController.swift in Sources */,
 				5812695F2412152A002A7C20 /* ViewController.swift in Sources */,
 				F6704968243D9E5000851B2D /* alamofireViewController.swift in Sources */,
 				5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */,
+				F6C3F08424580E08000887AE /* barberShopData.swift in Sources */,
 				5812695B2412152A002A7C20 /* AppDelegate.swift in Sources */,
 				F61800CC243617A600FA5942 /* panViewController.swift in Sources */,
+				F650FDAD24572C7B00A20125 /* shopCollectionView.swift in Sources */,
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */,
 				F6D279112449B6960018566C /* tableViewDataSource.swift in Sources */,
@@ -459,11 +484,13 @@
 				F649CE5B243224C600A2AB5F /* userDefaultsViewController.swift in Sources */,
 				F61800CA2436075A00FA5942 /* swipeGestureViewController.swift in Sources */,
 				F6A3B0EC243745A7008C03FB /* alamofireExampleViewController.swift in Sources */,
+				F6C3F08224580867000887AE /* barberShopDataModel.swift in Sources */,
 				F6E3B1862423810D0007CAC6 /* doneTaskTableViewCell.swift in Sources */,
 				F6832080243727FF00B15B01 /* barsViewController.swift in Sources */,
 				F61800C82435F1CA00FA5942 /* rotationViewController.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
 				F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */,
+				F6D451322456E29800B7627B /* tableCell.swift in Sources */,
 				F61800CE24361C7B00FA5942 /* panGestureViewController.swift in Sources */,
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
 				F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */,
@@ -484,6 +511,7 @@
 				5812697724128D98002A7C20 /* DataViewController.swift in Sources */,
 				F657EC9D2425F13B00A3FF30 /* dataModel.xcdatamodeld in Sources */,
 				F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */,
+				F6D4513A2456EC1100B7627B /* categoryCollectionView.swift in Sources */,
 				F6954EE3243C8ECD00900736 /* UITextFieldPadding.swift in Sources */,
 				F6696163244B36A600049133 /* barberShopLoginVC.swift in Sources */,
 				5812695D2412152A002A7C20 /* SceneDelegate.swift in Sources */,

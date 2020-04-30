@@ -36,8 +36,9 @@ class ButtonWithImage: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         if imageView != nil {
-            imageEdgeInsets = UIEdgeInsets(top: 5, left: 25, bottom: 5, right: (bounds.width - 45))
+            imageEdgeInsets = UIEdgeInsets(top: 5, left: 23, bottom: 5, right: (bounds.width - 45))
             // titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: (imageView?.frame.width)!)
+            
         }
     }
 }
@@ -48,6 +49,17 @@ extension UIButton{
     {
         layer.cornerRadius = frame.size.height/2
         layer.masksToBounds = true
+        adjustsImageWhenHighlighted = false
+    }
+    
+    func roundCorners(corners: UIRectCorner, radius: Int = 8) {
+        let maskPath1 = UIBezierPath(roundedRect: bounds,
+                                     byRoundingCorners: corners,
+                                     cornerRadii: CGSize(width: radius, height: radius))
+        let maskLayer1 = CAShapeLayer()
+        maskLayer1.frame = bounds
+        maskLayer1.path = maskPath1.cgPath
+        layer.mask = maskLayer1
     }
 }
 
@@ -70,6 +82,14 @@ extension UIView{
         layer.cornerRadius = 20
         layer.masksToBounds = true
         layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    func roundedView1()
+    {
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
+        layer.borderColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        layer.borderWidth = 0.5
     }
 }
 
@@ -198,6 +218,11 @@ extension NSMutableAttributedString {
         let range: NSRange = self.mutableString.range(of: stringValue, options: .caseInsensitive)
         self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
+    
+    func setFont(font: UIFont, forText stringValue: String){
+        let range: NSRange = self.mutableString.range(of: stringValue, options: .caseInsensitive)
+        self.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+    }
 }
 
 // MARK: Gestures
@@ -225,74 +250,4 @@ extension UIView{
         gradient.colors = colors.map{$0.cgColor}
         self.layer.insertSublayer(gradient, at: 0)
     }
-    
-    // bottom curve
-    func addBottomRoundedEdge(desiredCurve: CGFloat?) {
-        let offset: CGFloat = frame.width / desiredCurve!
-        let bounds: CGRect = self.bounds
-    
-    let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height / 2)
-    let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
-    let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset, height: bounds.size.height)
-    let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
-    rectPath.append(ovalPath)
-    
-    // Create the shape layer and set its path
-    let maskLayer: CAShapeLayer = CAShapeLayer()
-    maskLayer.frame = bounds
-    maskLayer.path = rectPath.cgPath
-    
-    // Set the newly created shape layer as the mask for the view's layer
-        layer.mask = maskLayer
-    }
 }
-
-
-
-@IBDesignable
-class CurvedUIImageView: UIImageView {
-
-//    private func pathCurvedForView(givenView: UIView, curvedPercent:CGFloat) ->UIBezierPath
-//    {
-//        let arrowPath = UIBezierPath()
-//        arrowPath.move(to: CGPoint(x:0, y:0))
-//        arrowPath.addLine(to: CGPoint(x:givenView.bounds.size.width, y:0))
-//        arrowPath.addLine(to: CGPoint(x:givenView.bounds.size.width, y:givenView.bounds.size.height))
-//        arrowPath.addQuadCurve(to: CGPoint(x:0, y:givenView.bounds.size.height), controlPoint: CGPoint(x:givenView.bounds.size.width/2, y:givenView.bounds.size.height-givenView.bounds.size.height*curvedPercent))
-//        arrowPath.addLine(to: CGPoint(x:0, y:0))
-//        arrowPath.close()
-//
-//        return arrowPath
-//    }
-    
-    // inverted curve
-    func pathCurvedForView(givenView: UIView, curvedPercent:CGFloat) ->UIBezierPath
-    {
-        let arrowPath = UIBezierPath()
-        arrowPath.move(to: CGPoint(x:0, y:0))
-        arrowPath.addLine(to: CGPoint(x:givenView.bounds.size.width, y:0))
-        arrowPath.addLine(to: CGPoint(x:givenView.bounds.size.width, y:givenView.bounds.size.height - (givenView.bounds.size.height*curvedPercent)))
-        arrowPath.addQuadCurve(to: CGPoint(x:0, y:givenView.bounds.size.height - (givenView.bounds.size.height*curvedPercent)), controlPoint: CGPoint(x:givenView.bounds.size.width/2, y:givenView.bounds.size.height))
-        arrowPath.addLine(to: CGPoint(x:0, y:0))
-        arrowPath.close()
-
-        return arrowPath
-    }
-
-    @IBInspectable var curvedPercent : CGFloat = 0{
-        didSet{
-            guard curvedPercent <= 1 && curvedPercent >= 0 else{
-                return
-            }
-
-            let shapeLayer = CAShapeLayer(layer: self.layer)
-            shapeLayer.path = self.pathCurvedForView(givenView: self,curvedPercent: curvedPercent).cgPath
-            shapeLayer.frame = self.bounds
-            shapeLayer.masksToBounds = true
-            self.layer.mask = shapeLayer
-        }
-    }
-
-}
-
-
