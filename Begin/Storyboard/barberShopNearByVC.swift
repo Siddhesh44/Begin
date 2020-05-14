@@ -34,12 +34,12 @@ class barberShopNearByVC: UIViewController {
         
     }
     
-        override func viewDidAppear(_ animated: Bool) {
-            super.viewDidAppear(animated)
-            let height: CGFloat = 50
-            let bounds = navigationController?.navigationBar.bounds
-            navigationController?.navigationBar.frame = CGRect(x: (bounds?.origin.x)!, y: (bounds?.origin.y)!, width: bounds!.width, height: bounds!.height + height)
-        }
+//        override func viewDidAppear(_ animated: Bool) {
+//            super.viewDidAppear(animated)
+//            let height: CGFloat = 50
+//            let bounds = navigationController?.navigationBar.bounds
+//            navigationController?.navigationBar.frame = CGRect(x: (bounds?.origin.x)!, y: (bounds?.origin.y)!, width: bounds!.width, height: bounds!.height + height)
+//        }
     
     func settingUpSearchBar()
     {

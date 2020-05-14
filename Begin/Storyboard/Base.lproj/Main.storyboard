@@ -2917,7 +2917,7 @@ Terms &amp; Conditions without reservation.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K3o-2s-Igg">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kxu-IO-rE0" customClass="mapCardCollectionView" customModule="Begin" customModuleProvider="target">
                                 <rect key="frame" x="20" y="608" width="394" height="185"/>
@@ -3059,30 +3059,30 @@ Terms &amp; Conditions without reservation.</string>
                     <navigationItem key="navigationItem" id="Cy8-qB-Sbg">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="1bH-QW-8M0">
-                            <rect key="frame" x="40.666666666666664" y="0.0" width="333" height="0.0"/>
+                            <rect key="frame" x="12" y="0.0" width="333" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTJ-Y6-XPg">
-                                    <rect key="frame" x="8" y="10" width="87.333333333333329" height="19.333333333333332"/>
+                                    <rect key="frame" x="8" y="0.0" width="87.333333333333329" height="19.333333333333332"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Tofino-Regular" family="Tofino" pointSize="14"/>
                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_location" translatesAutoresizingMaskIntoConstraints="NO" id="GYH-Wf-pgm">
-                                    <rect key="frame" x="8" y="35" width="12.333333333333332" height="17"/>
+                                    <rect key="frame" x="8" y="25" width="12.333333333333332" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <gestureRecognizers/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_direction" translatesAutoresizingMaskIntoConstraints="NO" id="ZGO-js-NXr">
-                                    <rect key="frame" x="170" y="38" width="14" height="14"/>
+                                    <rect key="frame" x="170" y="28" width="14" height="14"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <gestureRecognizers/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Francisco City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="STC-Rb-ATu">
-                                    <rect key="frame" x="25" y="33" width="131.66666666666666" height="17.666666666666664"/>
+                                    <rect key="frame" x="25" y="23" width="131.66666666666666" height="17.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Tofino-Regular" family="Tofino" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -4464,8 +4464,8 @@ Terms &amp; Conditions without reservation.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JEu-ob-uq2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Nearby" image="ic_nearby" id="TxN-EX-WgR"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="W4M-xl-Xb6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W4M-xl-Xb6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
