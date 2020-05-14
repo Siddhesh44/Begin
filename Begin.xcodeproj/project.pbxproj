@@ -252,7 +252,6 @@
 			children = (
 				F697769A244DDB4E00E30B6D /* barber shop fonts */,
 				581269602412152A002A7C20 /* Main.storyboard */,
-				F69DF2D8246C06390040A66F /* LocationSearchTable.swift */,
 				F669615E244B187200049133 /* barberShopExtension.swift */,
 				F6696160244B1C2B00049133 /* barberShopColors.swift */,
 				F6C3F08324580E08000887AE /* barberShopData.swift */,
@@ -268,6 +267,7 @@
 				F6D451312456E29800B7627B /* tableCell.swift */,
 				F6D451372456EBBC00B7627B /* servicesTableView.swift */,
 				F69DF2D4246BD9FD0040A66F /* baraberShopInboxVc.swift */,
+				F69DF2D8246C06390040A66F /* LocationSearchTable.swift */,
 				F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */,
 				F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */,
 				F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */,
