@@ -36,8 +36,8 @@ class barberShopSignUpVC: UIViewController {
         settingUpView()
         settingGesture()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow1(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide1(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow1(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide1(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     

@@ -5,4 +5,5 @@ target 'Begin' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'GoogleSignIn'
+    pod 'IQKeyboardManagerSwift'
 end

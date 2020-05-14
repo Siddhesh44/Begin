@@ -39,7 +39,6 @@ class addContactViewController: UIViewController {
         self.managingKeyBoard()
         
         imageView.roundedImage()
-        
     }
     
     @IBAction func cancelBtn(_ sender: Any) {

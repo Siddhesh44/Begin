@@ -17,6 +17,7 @@ class barberAppViewController: UIViewController {
     let emailTxt =  UITextField(frame: CGRect(x: 24, y: 154, width: 366, height: 44))
     let passwordTxt =  UITextField(frame: CGRect(x: 24, y: 218, width: 366, height: 44))
     
+    var loginBaseOrigin = CGFloat()
     
     @IBOutlet weak var connectWithGoogleBtn: UIButton!
     @IBOutlet weak var connectWithFaceBookBtn: UIButton!
@@ -28,8 +29,36 @@ class barberAppViewController: UIViewController {
         
         settingUpView()
         settingGesture()
-
+        
         backImage.addBlackGradientLayerInBackground(frame: view.bounds, colors:[.clear, .black])
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow1(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide1(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow1(notification: Notification)
+    {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            //            scrollView.contentInset.bottom = keyboardSize.height
+            
+            if self.emailTxt.isEditing && self.baseView.frame.maxY - self.passwordTxt.frame.maxY < keyboardSize.height {
+                self.baseView.frame.origin.y -= 10
+            }
+            
+            if passwordTxt.isEditing && baseView.frame.maxY - passwordTxt.frame.maxY < keyboardSize.height {
+                baseView.frame.origin.y -= 70
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide1(notification: Notification)
+    {
+        //        scrollView.contentInset.bottom = 0
+        
+        if  baseView.frame.origin.y != loginBaseOrigin{
+            baseView.frame.origin.y = loginBaseOrigin
+        }
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -57,15 +86,18 @@ class barberAppViewController: UIViewController {
         self.scrollView.bottomAnchor.constraint(equalTo: self.loginView.bottomAnchor).isActive = true;
         
         self.scrollView.isScrollEnabled = true
+        self.scrollView.showsVerticalScrollIndicator = true
         self.scrollView.addSubview(self.baseView)
         
-        //Constrain base view
+        // Constrain base view
         self.baseView.translatesAutoresizingMaskIntoConstraints = false;
         self.baseView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true;
         self.baseView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true;
         self.baseView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
         self.baseView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor).isActive = true;
-        self.baseView.heightAnchor.constraint(equalToConstant: 499).isActive = true;
+        self.baseView.heightAnchor.constraint(equalTo: self.scrollView.heightAnchor).isActive = true;
+        
+        loginBaseOrigin = baseView.frame.origin.y
         
         let welcomeBackLbl = UILabel()
         welcomeBackLbl.frame = CGRect(x: 104, y: 41, width: 206, height: 41)

@@ -9,7 +9,7 @@
 import UIKit
 
 class servicesCell: UITableViewCell {
-
+    
     @IBOutlet weak var servicesLbl: UILabel!
     @IBOutlet weak var viewAllLbl: UILabel!
 }
@@ -18,5 +18,14 @@ class shopCell: UITableViewCell{
     
     @IBOutlet weak var bestShopLbl: UILabel!
     @IBOutlet weak var viewBestShopLbl: UILabel!
+}
+
+class sortCell: UITableViewCell{
+    
+    @IBOutlet weak var listLbl: UILabel!
+    
+    func setList(listItem: SortBy){
+         self.listLbl.text = listItem.sortList
+    }
 }
 

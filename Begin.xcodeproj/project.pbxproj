@@ -17,7 +17,7 @@
 		5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F3052418BE0100BE4985 /* roundViewScroll.swift */; };
 		5840F3082418E04900BE4985 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F3072418E04900BE4985 /* tableViewController.swift */; };
 		5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840F30B2418F33D00BE4985 /* customTableViewCell.swift */; };
-		75706C225F566DD614BF2ECF /* libPods-Begin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 839DAD7EE52EEC8A7A6B3BA8 /* libPods-Begin.a */; };
+		B4AC73B6A258E158F4C4D010 /* libPods-Begin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 597418C9AEEAA0170D61F277 /* libPods-Begin.a */; };
 		F61800C224346DD700FA5942 /* coreLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61800C124346DD700FA5942 /* coreLocationViewController.swift */; };
 		F61800C42435AF7400FA5942 /* gestureRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61800C32435AF7400FA5942 /* gestureRecognizerViewController.swift */; };
 		F61800C62435CEFF00FA5942 /* pinchGestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61800C52435CEFF00FA5942 /* pinchGestureViewController.swift */; };
@@ -48,6 +48,7 @@
 		F683207824363A7000B15B01 /* edgePanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207724363A7000B15B01 /* edgePanViewController.swift */; };
 		F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207D2437088F00B15B01 /* toolsViewController.swift */; };
 		F6832080243727FF00B15B01 /* barsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F683207F243727FF00B15B01 /* barsViewController.swift */; };
+		F68A222A2469210B00F0CD9B /* mapCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68A22292469210B00F0CD9B /* mapCardCollectionView.swift */; };
 		F68E8698241CF29E0029FA17 /* mvcCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E8697241CF29E0029FA17 /* mvcCollectionViewCell.swift */; };
 		F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E8699241CF2EA0029FA17 /* mvcViewController.swift */; };
 		F68E869C241CF4230029FA17 /* mvcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68E869B241CF4230029FA17 /* mvcModel.swift */; };
@@ -61,10 +62,14 @@
 		F68F25E32440856200A05F2F /* pickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F25E22440856200A05F2F /* pickerViewController.swift */; };
 		F6954EE3243C8ECD00900736 /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */; };
 		F6977699244D8BA400E30B6D /* barberShopSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */; };
+		F69DF2D5246BD9FD0040A66F /* baraberShopInboxVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69DF2D4246BD9FD0040A66F /* baraberShopInboxVc.swift */; };
+		F69DF2D9246C063B0040A66F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69DF2D8246C06390040A66F /* LocationSearchTable.swift */; };
 		F6A3B0EC243745A7008C03FB /* alamofireExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */; };
+		F6AAFEA8246003410008E273 /* sortByTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AAFEA7246003410008E273 /* sortByTableView.swift */; };
 		F6B36F262420EDA400AEE85C /* toDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B36F252420EDA400AEE85C /* toDoListViewController.swift */; };
 		F6C3F08224580867000887AE /* barberShopDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3F08124580867000887AE /* barberShopDataModel.swift */; };
 		F6C3F08424580E08000887AE /* barberShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3F08324580E08000887AE /* barberShopData.swift */; };
+		F6C3F089245B0D6A000887AE /* barberShopFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3F088245B0D6A000887AE /* barberShopFilterVC.swift */; };
 		F6D2790D244886FD0018566C /* ContactAPIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D2790C244886FD0018566C /* ContactAPIHelper.swift */; };
 		F6D279112449B6960018566C /* tableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279102449B6960018566C /* tableViewDataSource.swift */; };
 		F6D279132449C2110018566C /* contactExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D279122449C2100018566C /* contactExtension.swift */; };
@@ -73,6 +78,9 @@
 		F6D451342456E44E00B7627B /* collectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451332456E44E00B7627B /* collectionCell.swift */; };
 		F6D451382456EBBC00B7627B /* servicesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451372456EBBC00B7627B /* servicesTableView.swift */; };
 		F6D4513A2456EC1100B7627B /* categoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D451392456EC1100B7627B /* categoryCollectionView.swift */; };
+		F6DF81682462C3A200F2C973 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF81672462C3A200F2C973 /* RangeSlider.swift */; };
+		F6DF816A2462C48100F2C973 /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF81692462C48100F2C973 /* RangeSliderThumbLayer.swift */; };
+		F6DF816C2462C4B300F2C973 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DF816B2462C4B300F2C973 /* RangeSliderTrackLayer.swift */; };
 		F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */; };
 		F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */; };
 		F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E3B183242247360007CAC6 /* TaskModel.swift */; };
@@ -96,7 +104,7 @@
 		5840F3052418BE0100BE4985 /* roundViewScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundViewScroll.swift; sourceTree = "<group>"; };
 		5840F3072418E04900BE4985 /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		5840F30B2418F33D00BE4985 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
-		839DAD7EE52EEC8A7A6B3BA8 /* libPods-Begin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Begin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597418C9AEEAA0170D61F277 /* libPods-Begin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Begin.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0683ED21C56E6A2D67BE2B5 /* Pods-Begin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Begin.release.xcconfig"; path = "Target Support Files/Pods-Begin/Pods-Begin.release.xcconfig"; sourceTree = "<group>"; };
 		F61800C124346DD700FA5942 /* coreLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreLocationViewController.swift; sourceTree = "<group>"; };
 		F61800C32435AF7400FA5942 /* gestureRecognizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureRecognizerViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 		F683207724363A7000B15B01 /* edgePanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = edgePanViewController.swift; sourceTree = "<group>"; };
 		F683207D2437088F00B15B01 /* toolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toolsViewController.swift; sourceTree = "<group>"; };
 		F683207F243727FF00B15B01 /* barsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barsViewController.swift; sourceTree = "<group>"; };
+		F68A22292469210B00F0CD9B /* mapCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapCardCollectionView.swift; sourceTree = "<group>"; };
 		F68E8697241CF29E0029FA17 /* mvcCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68E8699241CF2EA0029FA17 /* mvcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcViewController.swift; sourceTree = "<group>"; };
 		F68E869B241CF4230029FA17 /* mvcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvcModel.swift; sourceTree = "<group>"; };
@@ -138,10 +147,14 @@
 		F68F25E22440856200A05F2F /* pickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewController.swift; sourceTree = "<group>"; };
 		F6954EE2243C8ECC00900736 /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
 		F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopSignUpVC.swift; sourceTree = "<group>"; };
+		F69DF2D4246BD9FD0040A66F /* baraberShopInboxVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baraberShopInboxVc.swift; sourceTree = "<group>"; };
+		F69DF2D8246C06390040A66F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		F6A3B0EB243745A7008C03FB /* alamofireExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alamofireExampleViewController.swift; sourceTree = "<group>"; };
+		F6AAFEA7246003410008E273 /* sortByTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortByTableView.swift; sourceTree = "<group>"; };
 		F6B36F252420EDA400AEE85C /* toDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListViewController.swift; sourceTree = "<group>"; };
 		F6C3F08124580867000887AE /* barberShopDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopDataModel.swift; sourceTree = "<group>"; };
 		F6C3F08324580E08000887AE /* barberShopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopData.swift; sourceTree = "<group>"; };
+		F6C3F088245B0D6A000887AE /* barberShopFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barberShopFilterVC.swift; sourceTree = "<group>"; };
 		F6D2790C244886FD0018566C /* ContactAPIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAPIHelper.swift; sourceTree = "<group>"; };
 		F6D279102449B6960018566C /* tableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewDataSource.swift; sourceTree = "<group>"; };
 		F6D279122449C2100018566C /* contactExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactExtension.swift; sourceTree = "<group>"; };
@@ -150,6 +163,9 @@
 		F6D451332456E44E00B7627B /* collectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionCell.swift; sourceTree = "<group>"; };
 		F6D451372456EBBC00B7627B /* servicesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicesTableView.swift; sourceTree = "<group>"; };
 		F6D451392456EC1100B7627B /* categoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCollectionView.swift; sourceTree = "<group>"; };
+		F6DF81672462C3A200F2C973 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		F6DF81692462C48100F2C973 /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
+		F6DF816B2462C4B300F2C973 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 		F6E3B17B2420FE770007CAC6 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		F6E3B17D24220DBA0007CAC6 /* viewTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewTaskTableViewCell.swift; sourceTree = "<group>"; };
 		F6E3B183242247360007CAC6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
@@ -167,7 +183,7 @@
 				F68F25DF243F01A600A05F2F /* FacebookLogin in Frameworks */,
 				F68F25DB243F01A600A05F2F /* FacebookShare in Frameworks */,
 				F68F25DD243F01A600A05F2F /* FacebookCore in Frameworks */,
-				75706C225F566DD614BF2ECF /* libPods-Begin.a in Frameworks */,
+				B4AC73B6A258E158F4C4D010 /* libPods-Begin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +242,7 @@
 		735966358F988B9D9672FF39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				839DAD7EE52EEC8A7A6B3BA8 /* libPods-Begin.a */,
+				597418C9AEEAA0170D61F277 /* libPods-Begin.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,19 +252,27 @@
 			children = (
 				F697769A244DDB4E00E30B6D /* barber shop fonts */,
 				581269602412152A002A7C20 /* Main.storyboard */,
+				F69DF2D8246C06390040A66F /* LocationSearchTable.swift */,
+				F669615E244B187200049133 /* barberShopExtension.swift */,
+				F6696160244B1C2B00049133 /* barberShopColors.swift */,
 				F6C3F08324580E08000887AE /* barberShopData.swift */,
 				F6C3F08124580867000887AE /* barberShopDataModel.swift */,
+				F6DF81672462C3A200F2C973 /* RangeSlider.swift */,
+				F6DF81692462C48100F2C973 /* RangeSliderThumbLayer.swift */,
+				F6DF816B2462C4B300F2C973 /* RangeSliderTrackLayer.swift */,
+				F6C3F088245B0D6A000887AE /* barberShopFilterVC.swift */,
 				F6D451332456E44E00B7627B /* collectionCell.swift */,
 				F650FDAC24572C7B00A20125 /* shopCollectionView.swift */,
+				F68A22292469210B00F0CD9B /* mapCardCollectionView.swift */,
 				F6D451392456EC1100B7627B /* categoryCollectionView.swift */,
 				F6D451312456E29800B7627B /* tableCell.swift */,
 				F6D451372456EBBC00B7627B /* servicesTableView.swift */,
-				F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */,
+				F69DF2D4246BD9FD0040A66F /* baraberShopInboxVc.swift */,
 				F6696F9B245419D6006D5F4D /* barberShopNearByVC.swift */,
+				F6696F992452FFA2006D5F4D /* barberShopHomeVC.swift */,
 				F6977698244D8BA400E30B6D /* barberShopSignUpVC.swift */,
-				F6696160244B1C2B00049133 /* barberShopColors.swift */,
-				F669615E244B187200049133 /* barberShopExtension.swift */,
 				F6D27917244AE98D0018566C /* barberAppViewController.swift */,
+				F6AAFEA7246003410008E273 /* sortByTableView.swift */,
 				F6692DC4245087E100BD6008 /* popUpViewViewController.swift */,
 				F6696162244B36A600049133 /* barberShopLoginVC.swift */,
 				F668D5602444521E00259A2A /* addContactViewController.swift */,
@@ -461,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6E3B17C2420FE770007CAC6 /* addTaskViewController.swift in Sources */,
+				F6AAFEA8246003410008E273 /* sortByTableView.swift in Sources */,
 				F6D451342456E44E00B7627B /* collectionCell.swift in Sources */,
 				F669615F244B187200049133 /* barberShopExtension.swift in Sources */,
 				F649CE59243200E600A2AB5F /* CS193PViewController.swift in Sources */,
@@ -470,11 +495,15 @@
 				F63206162438587C000B86B6 /* textViewController.swift in Sources */,
 				F6692DC5245087E100BD6008 /* popUpViewViewController.swift in Sources */,
 				5812695F2412152A002A7C20 /* ViewController.swift in Sources */,
+				F69DF2D5246BD9FD0040A66F /* baraberShopInboxVc.swift in Sources */,
 				F6704968243D9E5000851B2D /* alamofireViewController.swift in Sources */,
+				F6DF816C2462C4B300F2C973 /* RangeSliderTrackLayer.swift in Sources */,
 				5840F3062418BE0100BE4985 /* roundViewScroll.swift in Sources */,
 				F6C3F08424580E08000887AE /* barberShopData.swift in Sources */,
+				F6DF816A2462C48100F2C973 /* RangeSliderThumbLayer.swift in Sources */,
 				5812695B2412152A002A7C20 /* AppDelegate.swift in Sources */,
 				F61800CC243617A600FA5942 /* panViewController.swift in Sources */,
+				F6DF81682462C3A200F2C973 /* RangeSlider.swift in Sources */,
 				F650FDAD24572C7B00A20125 /* shopCollectionView.swift in Sources */,
 				F68E869E241CF4D50029FA17 /* mvcData.swift in Sources */,
 				F683207E2437088F00B15B01 /* toolsViewController.swift in Sources */,
@@ -488,9 +517,11 @@
 				F6E3B1862423810D0007CAC6 /* doneTaskTableViewCell.swift in Sources */,
 				F6832080243727FF00B15B01 /* barsViewController.swift in Sources */,
 				F61800C82435F1CA00FA5942 /* rotationViewController.swift in Sources */,
+				F69DF2D9246C063B0040A66F /* LocationSearchTable.swift in Sources */,
 				5840F30C2418F33E00BE4985 /* customTableViewCell.swift in Sources */,
 				F6E3B184242247360007CAC6 /* TaskModel.swift in Sources */,
 				F6D451322456E29800B7627B /* tableCell.swift in Sources */,
+				F68A222A2469210B00F0CD9B /* mapCardCollectionView.swift in Sources */,
 				F61800CE24361C7B00FA5942 /* panGestureViewController.swift in Sources */,
 				F6E3B17E24220DBA0007CAC6 /* viewTaskTableViewCell.swift in Sources */,
 				F6682B282441D28D00F94C0A /* swiftyJSONExViewController.swift in Sources */,
@@ -518,6 +549,7 @@
 				F61800C62435CEFF00FA5942 /* pinchGestureViewController.swift in Sources */,
 				F6D27918244AE98D0018566C /* barberAppViewController.swift in Sources */,
 				F6D279132449C2110018566C /* contactExtension.swift in Sources */,
+				F6C3F089245B0D6A000887AE /* barberShopFilterVC.swift in Sources */,
 				F68E869A241CF2EA0029FA17 /* mvcViewController.swift in Sources */,
 				F6E3B18A2423851F0007CAC6 /* doneTaskTableViewController.swift in Sources */,
 				F668D56C2445A58C00259A2A /* showContactsCell.swift in Sources */,

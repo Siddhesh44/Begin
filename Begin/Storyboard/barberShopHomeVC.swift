@@ -15,6 +15,13 @@ class barberShopHomeVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imageView: UIImageView!
     
+    var applyServices: String = "nil"
+    var applyRating: String = "nil"
+    var applyGender: String = "nil"
+    var applyDistance: String = "nil"
+    var applySortBy: String = "nil"
+    var applyPrice: String = "nil"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +35,7 @@ class barberShopHomeVC: UIViewController {
         //imageView.addBottomRoundedEdge(desiredCurve: 1.5)
         settingGesture()
     }
-        
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
@@ -36,6 +43,10 @@ class barberShopHomeVC: UIViewController {
         // tap
         let tap = UITapGestureRecognizer(target: self, action: #selector(toDismissKeyBoard))
         view.addGestureRecognizer(tap)
+    }
+    
+    @IBAction func filterTap(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "toFilterVC", sender: self)
     }
     
     @objc func toDismissKeyBoard(){
@@ -55,6 +66,17 @@ class barberShopHomeVC: UIViewController {
 extension barberShopHomeVC: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+    
+    @IBAction func unwindToHomeVC(segue: UIStoryboardSegue) {
+        print("+++++++++++++++++++")
+        
+        if segue.source is barberShopFilterVC{
+            if let senderVC = segue.source as? barberShopFilterVC{
+                applyServices = senderVC.selectedService ?? "nil"
+                print("\(applyServices) \n \(applyRating) \n \(applyGender) \n \(applyDistance) \n \(applySortBy) \n \(applyPrice) \n ")
+            }
+        }
     }
 }
 

@@ -35,3 +35,26 @@ class Shops{
         self.shopStarPoint = shopStarPoint
     }
 }
+
+class Cards{
+    var cardImage: UIImage
+    var cardName: String
+    var cardAddress: String
+    var cardStarPoint: String
+    
+    init(cardImage: UIImage,cardName: String,cardAddress: String,cardStarPoint: String)
+    {
+        self.cardImage = cardImage
+        self.cardName = cardName
+        self.cardAddress = cardAddress
+        self.cardStarPoint = cardStarPoint
+    }
+}
+
+class SortBy{
+    var sortList: String
+    
+    init(sortListItem: String) {
+        self.sortList = sortListItem
+    }
+}

@@ -38,7 +38,84 @@ class ButtonWithImage: UIButton {
         if imageView != nil {
             imageEdgeInsets = UIEdgeInsets(top: 5, left: 23, bottom: 5, right: (bounds.width - 45))
             // titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: (imageView?.frame.width)!)
-            
+        }
+    }
+}
+
+// MARK: Button class circular  button, border width, border color
+
+@IBDesignable
+class circularButton: UIButton {
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        circularButton()
+    }
+    
+    // circular
+    @IBInspectable var circular: Bool = false {
+        didSet {
+            circularButton()
+        }
+    }
+    
+    func circularButton() {
+        layer.cornerRadius = circular ? frame.size.width * 0.5 : 0
+    }
+    
+    // button border
+    @IBInspectable var borderWidth: CGFloat = 0{
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+    
+}
+
+// MARK: Button class round button, round corner , border width, border color
+
+@IBDesignable
+class RoundButton: UIButton {
+    
+    // rounded corner
+    @IBInspectable var cornerRadius: CGFloat = 0{
+        didSet{
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        roundedButton()
+    }
+    
+    // round
+    @IBInspectable var rounded: Bool = false {
+        didSet {
+            roundedButton()
+        }
+    }
+    
+    func roundedButton() {
+        layer.cornerRadius = rounded ? frame.size.height / 2 : 0
+    }
+    
+    // button border
+    @IBInspectable var borderWidth: CGFloat = 0{
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        didSet{
+            self.layer.borderColor = borderColor.cgColor
         }
     }
 }
@@ -60,6 +137,15 @@ extension UIButton{
         maskLayer1.frame = bounds
         maskLayer1.path = maskPath1.cgPath
         layer.mask = maskLayer1
+    }
+    
+    func makeCircularButtonWithShadow(){
+        layer.cornerRadius = frame.size.width * 0.5
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        layer.shadowOpacity = 0.3
+        layer.shadowRadius = 2.0
     }
 }
 
@@ -251,3 +337,12 @@ extension UIView{
         self.layer.insertSublayer(gradient, at: 0)
     }
 }
+
+
+// MARK: Navigation bar
+
+
+// MARK: UILabel
+
+// label with icon
+

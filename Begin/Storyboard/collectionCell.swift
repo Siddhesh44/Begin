@@ -42,3 +42,26 @@ class shopCollectionCell: UICollectionViewCell{
     }
 }
 
+class mapCardCollectionCell: UICollectionViewCell{
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var bookBtn: UIButton!
+    
+    @IBOutlet weak var cardNameLbl: UILabel!
+    @IBOutlet weak var cardAddressLbl: UILabel!
+    @IBOutlet weak var cardStarPointLbl: UILabel!
+    @IBOutlet weak var cardImage: UIImageView!
+    
+    override func awakeFromNib() {
+    cardView.roundedView1()
+    bookBtn.roundCorners(corners: [.topLeft], radius: 8)
+   }
+    
+    func setCard(data: Cards){
+        cardImage.image = data.cardImage
+        cardAddressLbl.text = data.cardAddress
+        cardNameLbl.text = data.cardName
+        cardStarPointLbl.text = data.cardStarPoint
+    }
+}
+
+
