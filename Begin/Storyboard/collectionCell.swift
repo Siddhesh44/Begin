@@ -42,6 +42,7 @@ class shopCollectionCell: UICollectionViewCell{
     }
 }
 
+
 class mapCardCollectionCell: UICollectionViewCell{
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var bookBtn: UIButton!
