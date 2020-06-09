@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class Services{
     var servicesImage: UIImage
@@ -56,5 +57,17 @@ class SortBy{
     
     init(sortListItem: String) {
         self.sortList = sortListItem
+    }
+}
+
+
+class BarberShopLoginModel{
+    var message:String?
+    var token:String?
+    
+    
+    init(data: JSON) {
+        self.message = data["message"].stringValue
+        self.token = data["token"].stringValue
     }
 }

@@ -287,7 +287,7 @@ extension UITextField{
         font = UIFont(name: "Tofino-Regular", size: 14)
         borderStyle = UITextField.BorderStyle.none
         backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
-        textColor = Colors.placeHolderColor
+        textColor = UIColor.black
         autocorrectionType = UITextAutocorrectionType.no
         keyboardType = UIKeyboardType.default
         returnKeyType = UIReturnKeyType.default

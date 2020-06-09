@@ -7,7 +7,9 @@
 //
 
 // https://intervid.infiny.dev/users/login
+// test.s@infiny.in
 // eldhose.m@gmail.com
+// asdasd
 
 
 import UIKit
@@ -18,6 +20,9 @@ import FacebookCore
 import FacebookLogin
 
 class alamofireExampleViewController: UIViewController,GIDSignInDelegate{
+    
+    var loginHelper = LoginAPIHelper()
+    
     
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,6 +44,9 @@ class alamofireExampleViewController: UIViewController,GIDSignInDelegate{
         userPasswordTxt.delegate = self
         GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        
+        
+        loginHelper.showDelegate = self
         
         settingUpGestures()
         
@@ -143,30 +151,32 @@ class alamofireExampleViewController: UIViewController,GIDSignInDelegate{
         let email = userEmailTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pass = userPasswordTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        var parameters: [String: Any] = ["email": email, "password": pass, "deviceToken": "fgdvsdgvdfsgvefr", "user_type": "jobseeker"]
-        parameters["agency_id"] = "5e15a4df13de410c28587583"
+        loginHelper.loginRequest(email: email, pass: pass)
         
-        AF.request("https://intervid.infiny.dev/users/login",method: .post,parameters: parameters).validate().responseJSON { response in
-            switch response.result{
-            case .success(let value):
-                if let data = value as? Dictionary<String,AnyObject>
-                {
-                    print(data)
-                    let resultValue = data as NSDictionary
-                    let code = resultValue["errcode"] as! Int
-                    if code == 0
-                    {
-                        self.performSegue(withIdentifier: "signInSuccessful", sender: self)
-                    }
-                    else
-                    {
-                        print("error")
-                    }
-                }
-            case .failure(_):
-                print("error")
-            }
-        }
+        //        var parameters: [String: Any] = ["email": email, "password": pass, "deviceToken": "fgdvsdgvdfsgvefr", "user_type": "employer"]
+        //        parameters["agency_id"] = "5e15a4df13de410c28587583"
+        //
+        //        AF.request("https://intervid.infiny.dev/users/login",method: .post,parameters: parameters).validate().responseJSON { response in
+        //            switch response.result{
+        //            case .success(let value):
+        //                        if let data = value as? Dictionary<String,AnyObject>
+        //                        {
+        //                            print(data)
+        //                            let resultValue = data as NSDictionary
+        //                            let code = resultValue["errcode"] as! Int
+        //                            if code == 0
+        //                            {
+        //                                self.performSegue(withIdentifier: "signInSuccessful", sender: self)
+        //                            }
+        //                            else
+        //                            {
+        //                                print("error")
+        //                            }
+        //                        }
+        //                    case .failure(_):
+        //                        print("error")
+        //                    }
+        //                }
     }
     
     // MARK: sign in with facebook
@@ -276,3 +286,14 @@ extension UITextField {
 //    }
 //}
 
+
+extension alamofireExampleViewController: abc{
+    func show(data: LoginModel) {
+       
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeScreenVC = storyBoard.instantiateViewController(withIdentifier: "logoutView") as! fgLogOutViewController
+        homeScreenVC.loginData = data
+        self.navigationController?.pushViewController(homeScreenVC, animated: true)
+    }
+    
+}

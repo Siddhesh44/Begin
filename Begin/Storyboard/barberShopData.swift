@@ -39,6 +39,21 @@ var sortByList: [SortBy] = [SortBy(sortListItem: "Most Popular"),
 
 
 
+class barberShopData{
+    
+    func fetchToken() -> String{
+        if let token = UserDefaults.standard.value(forKey: "userToken") as? String{
+            print("fetched_token", token)
+            return token
+        }else{
+            print("token is nil")
+            return ""
+        }
+    }
+    
+}
+
+
 
 
 

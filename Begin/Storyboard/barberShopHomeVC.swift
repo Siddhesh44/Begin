@@ -22,6 +22,7 @@ class barberShopHomeVC: UIViewController {
     var applySortBy: String = "nil"
     var applyPrice: String = "nil"
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,6 +9,11 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+    func dropPinSet(placemark:MKPlacemark)
+}
+
 class barberShopNearByVC: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -31,15 +36,7 @@ class barberShopNearByVC: UIViewController {
         
         mapView.delegate = self
         checkLocationServices()
-        
     }
-    
-//        override func viewDidAppear(_ animated: Bool) {
-//            super.viewDidAppear(animated)
-//            let height: CGFloat = 50
-//            let bounds = navigationController?.navigationBar.bounds
-//            navigationController?.navigationBar.frame = CGRect(x: (bounds?.origin.x)!, y: (bounds?.origin.y)!, width: bounds!.width, height: bounds!.height + height)
-//        }
     
     func settingUpSearchBar()
     {
@@ -50,9 +47,8 @@ class barberShopNearByVC: UIViewController {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search salon, spa and barber"
-        
         navigationItem.searchController = resultSearchController
-    
+        
         searchBar.delegate = self
         searchBar.backgroundImage = UIImage()
         searchBar.backgroundColor = .clear
@@ -74,56 +70,19 @@ class barberShopNearByVC: UIViewController {
         textFieldInsideSearchBar?.clearButtonMode = .never
         
         locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
         
     }
     
-    
-    @IBAction func filterTapped(_ sender: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "toFilterVc", sender: self)
-    }
     
     
     @IBAction func hoeBtnClicked(_ sender: UIButton) {
         print("button clicked")
     }
     
-    
-    //    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-    ////        if searchBar.searchTextField.text!.isEmpty{
-    ////            searchBar.resignFirstResponder()
-    ////            searchBar.showsCancelButton = false
-    ////        }
-    ////        else{
-    ////            searchBar.endEditing(true)
-    ////            if let cancelButton : UIButton = searchBar.value(forKey: "cancelButton") as? UIButton{
-    ////                cancelButton.isEnabled = true
-    ////            }
-    ////        }
-    //    }
-    //
-    
 }
 
 extension barberShopNearByVC: UISearchBarDelegate{
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        //        searchBar.endEditing(true)
-        //        if let cancelButton : UIButton = searchBar.value(forKey: "cancelButton") as? UIButton{
-        //            cancelButton.isEnabled = true
-        //        }
-        
-    }
-    //
-    //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    //        searchBar.resignFirstResponder()
-    //        searchBar.text = ""
-    //        searchBar.showsCancelButton = false
-    //    }
-    //
-    //    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-    //        searchBar.showsCancelButton = true
-    //    }
     
 }
 
@@ -196,7 +155,65 @@ extension barberShopNearByVC: CLLocationManagerDelegate{
 }
 
 extension barberShopNearByVC:MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation{
+            return nil
+        }
+        
+        let identifier = "marker"
+        var marker: MKMarkerAnnotationView
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(
+            withIdentifier: identifier)
+            as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            marker = dequeuedView
+        } else {
+            marker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            marker.markerTintColor = #colorLiteral(red: 0.9921568627, green: 0.4235294118, blue: 0.3411764706, alpha: 1)
+            marker.glyphImage = #imageLiteral(resourceName: "barber icon")
+            marker.glyphTintColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        }
+        return marker
+        
+    }
+}
+
+extension barberShopNearByVC: HandleMapSearch {
+    func dropPinSet(placemark: MKPlacemark) {
+        // cache the pin
+        selectedPin = placemark
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        centerViewOnUserLocation()
+    }
     
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let center = CLLocationCoordinate2D(latitude: placemark.coordinate.latitude, longitude: placemark.coordinate.longitude)
+        let region = MKCoordinateRegion.init(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(region, animated: true)
+    }
 }
 
 

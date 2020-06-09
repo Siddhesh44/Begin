@@ -10,8 +10,18 @@ import UIKit
 
 class baraberShopInboxVc: UIViewController {
 
+    var barberShopApiHelper = BarberShopAPIHelper()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     
+      
+        
+        barberShopApiHelper.getList()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
 }
+

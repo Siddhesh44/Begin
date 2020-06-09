@@ -40,6 +40,9 @@ class ContactAPIHelper{
                 print("at a time of passing: \(self.fetchedContact.isEmpty)")
                 self.delegate?.didFetchContacts(fetchedContacts: self.fetchedContact)
                 
+
+                let dataDic = ["fetchContacts": self.fetchedContact]
+                NotificationCenter.default.post(name: NSNotification.Name("success"), object: nil, userInfo: dataDic)
             }
             else{
                 

@@ -15,6 +15,8 @@ class LocationSearchTable: UITableViewController {
     //    store mapRegion
     var mapView: MKMapView? = nil
     
+    var handleMapSearchDelegate:HandleMapSearch? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,8 +44,6 @@ class LocationSearchTable: UITableViewController {
         )
         return addressLine
     }
-    
-    
 }
 
 extension LocationSearchTable : UISearchResultsUpdating {
@@ -77,6 +77,22 @@ extension LocationSearchTable {
         cell.textLabel?.text = selectedItem.name
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0{
+            mapView!.removeAnnotations(mapView!.annotations)
+            for i in matchingItems{
+                let selectedItem = i.placemark
+                handleMapSearchDelegate?.dropPinSet(placemark: selectedItem)
+                dismiss(animated: true, completion: nil)
+            }
+        }
+        else{
+            let selectedItem = matchingItems[indexPath.row].placemark
+            handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 

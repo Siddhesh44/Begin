@@ -6,4 +6,8 @@ target 'Begin' do
     pod 'SwiftyJSON'
     pod 'GoogleSignIn'
     pod 'IQKeyboardManagerSwift'
+    pod 'Firebase/Core'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Messaging'
+    
 end

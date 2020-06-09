@@ -20,6 +20,8 @@ class ContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+          NotificationCenter.default.addObserver(self, selector: #selector(fetchingSuccess(notification:)), name: NSNotification.Name("success"), object: nil)
+        
         tableView.dataSource = tableDataSource
         searchBar.delegate = self
         contcatApi.delegate = self
@@ -29,6 +31,15 @@ class ContactViewController: UIViewController {
         contcatApi.checkForContactsPermission()
         
         tableDataSource.contacts.sort(by: {$0.lastName.lowercased() < $1.lastName.lowercased()})
+        
+      
+    }
+    
+    
+    @objc func fetchingSuccess(notification: Notification){
+        
+        print("++++++++++++++++++")
+        print(notification.userInfo?["fetchContacts"])
     }
     
     // MARK: Gesture setUp

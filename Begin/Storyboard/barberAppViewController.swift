@@ -8,9 +8,13 @@
 
 import UIKit
 
+// test.s@infiny.in
+// eldhose.m@gmail.com
+// asdasd
 
 class barberAppViewController: UIViewController {
     
+    var barberShopApiHelper = BarberShopAPIHelper()
     let loginView = UIView()
     let scrollView = UIScrollView()
     let baseView = UIView()
@@ -32,8 +36,10 @@ class barberAppViewController: UIViewController {
         
         backImage.addBlackGradientLayerInBackground(frame: view.bounds, colors:[.clear, .black])
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow1(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide1(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow1(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide1(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        barberShopApiHelper.barberShopDelegate = self
     }
     
     @objc func keyboardWillShow1(notification: Notification)
@@ -175,6 +181,7 @@ class barberAppViewController: UIViewController {
         button.leadingAnchor.constraint(equalTo: baseView.leadingAnchor,constant: 32.0).isActive = true
         button.trailingAnchor.constraint(equalTo: baseView.trailingAnchor,constant: -32.0).isActive = true
         
+        
         let forgotPasswordLbl = UILabel()
         forgotPasswordLbl.frame = CGRect(x: 123.67, y: 363.0, width: 166.67, height: 19.33)
         forgotPasswordLbl.text = "Forgot your password?"
@@ -265,11 +272,16 @@ class barberAppViewController: UIViewController {
     
     
     @objc func buttonClicked() {
-        print("Button Clicked")
+        print("Login Button Clicked")
         
-        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "HomeTab")
-        nextVC.modalPresentationStyle = .fullScreen
-        self.present(nextVC,animated: true,completion: nil)
+        let email = emailTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pass = passwordTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        barberShopApiHelper.appLoginRequest(email: email, pass: pass)
+        
+//        let nextVC = self.storyboard!.instantiateViewController(withIdentifier: "HomeTab")
+//        nextVC.modalPresentationStyle = .fullScreen
+//        self.present(nextVC,animated: true,completion: nil)
     }
     
     var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
@@ -293,8 +305,10 @@ class barberAppViewController: UIViewController {
             let draggedDistance = touchPoint.y - initialTouchPoint.y
             let maxScroll:CGFloat = 200
             if draggedDistance >  maxScroll{
+                 UIView.animate(withDuration: 0.3) {
                 //set y position to screen height
                 self.loginView.frame = CGRect(x:0 , y: self.view.bounds.maxY, width: self.view.bounds.width, height: 499)
+                }
             } else {
                 //print("draggedDistance !>  maxScroll")
                 UIView.animate(withDuration: 0.3) {
@@ -339,5 +353,20 @@ extension barberAppViewController: UITextFieldDelegate{
         emailTxt.resignFirstResponder()
         passwordTxt.resignFirstResponder()
         return true
+    }
+}
+
+extension barberAppViewController: BarberShopAPIDelegate{
+   
+    func loginStatus(message: String) {
+        print(message)
+    }
+    
+    func loginIntoApp(data: BarberShopLoginModel) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyBoard.instantiateViewController(withIdentifier: "HomeTab") as! barberShopTabBar
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
+       // self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
